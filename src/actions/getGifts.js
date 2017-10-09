@@ -7,7 +7,7 @@ export const getGifts = (gifts) => {
   }
 }
 
-export const addIdea = (id, idea) => {
+export const addIdea = (id, idea, notes) => {
   // console.log('action addIdea');
   return {
     type: "ADD_IDEA",
@@ -16,10 +16,18 @@ export const addIdea = (id, idea) => {
         creator_id: 1,
         giftee_id: id,
         idea: idea,
-        idea_notes: null,
+        idea_notes: notes,
         is_past: false,
         date_given: null
       }
     )
+  }
+}
+
+export const deleteGift = (id) => {
+  console.log('id', id);
+  return {
+    type: "DELETE_GIFT",
+    payload: axios.post(`http://localhost:8089/gifts/${id}/delete`)
   }
 }

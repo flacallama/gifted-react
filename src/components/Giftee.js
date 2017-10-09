@@ -20,14 +20,15 @@ class Giftee extends Component {
 
         <form
           onSubmit={e => { this.props.addIdeaAction(this.props.giftee.id,
-            e.target.idea.value
+            e.target.idea.value, e.target.notes.value
           )
           e.preventDefault();
           e.target.reset();
         }}
         >
           <div className="form-group">
-            <input className="form-control" name="idea"/>
+            <input className="form-control" name="idea" placeholder="Gift Idea"/>
+            <input className="form-control" name="notes" placeholder="Notes"/>
           </div>
           <div className="form-group">
             <input type="submit" className="btn btn-primary" />

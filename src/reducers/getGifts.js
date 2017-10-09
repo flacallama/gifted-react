@@ -10,8 +10,12 @@ export default (state = [], actions) => {
     case "ADD_IDEA_FULFILLED":
     console.log('reducer addIdea', actions.payload);
       return [...actions.payload.data];
-
-
+    case "DELETE_GIFT_PENDING":
+    console.log("hit delete pending")
+      return state;
+    case "DELETE_GIFT_FULFILLED":
+      console.log("hit delete fulfilled")
+      return [...actions.payload.data]
     default:
       return state;
   }
