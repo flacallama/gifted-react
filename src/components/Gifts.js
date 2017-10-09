@@ -2,18 +2,16 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { getGifts } from '../actions/getGifts';
-import { addIdea } from '../actions/addIdea';
+import { addIdea } from '../actions/getGifts';
 import Gift from './Gift'
 
 
 class Gifts extends Component {
 
-  componentWillMount() {
-    console.log('component mounting');
-    this.props.getGiftsAction();
-  }
+
 
   render () {
+      console.log('props in gifts', this.props);
     let thegifts = this.props.getGifts.map(gift => {
 
       return <Gift key={gift.id} gift={gift} />
@@ -23,27 +21,13 @@ class Gifts extends Component {
         Gift Ideas:
         {thegifts}
 
-        <form
-          onSubmit={e => { this.props.addidea(
-            e.target.idea.value
-          )
-          e.preventDefault();
-          e.target.reset();
-        }}
-        >
-          <div className="form-group">
-            <input className="form-control" name="idea"/>
-          </div>
-          <div className="form-group">
-            <input type="submit" className="btn btn-primary" />
-          </div>
-        </form>
 
 
 
 
 
-        
+
+
       </div>
     )
   }
@@ -51,7 +35,7 @@ class Gifts extends Component {
 
 
 function mapStateToProps(state, props){
-  console.log('props in mapStateToProps gifts', this.props);
+
   return {
     getGifts: state.getGifts
   }
@@ -60,7 +44,7 @@ function mapStateToProps(state, props){
 function matchDispatchToProps(dispatch){
   return {
     getGiftsAction: bindActionCreators(getGifts, dispatch),
-    addIdea: bindActionCreators(addIdea, dispatch)
+    addIdeaAction: bindActionCreators(addIdea, dispatch)
   }
 }
 export default connect(mapStateToProps, matchDispatchToProps)(Gifts);

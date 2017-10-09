@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Giftees from './Giftees';
-import Gifts from './Gifts';
 
 class Main extends Component {
 
@@ -8,7 +7,7 @@ class Main extends Component {
     return (
       <div>
         <Giftees />
-        <Gifts />
+
 
       </div>
     )
