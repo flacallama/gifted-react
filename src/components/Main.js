@@ -1,9 +1,16 @@
 import React, { Component } from 'react';
+import Giftees from './Giftees';
+import Gifts from './Gifts';
+
 class Main extends Component {
 
   render () {
     return (
-      <div>Main</div>
+      <div>
+        <Giftees />
+        <Gifts />
+
+      </div>
     )
   }
 }
