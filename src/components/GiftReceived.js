@@ -5,7 +5,7 @@ import UpdateIdea from './UpdateIdea';
 import AnimakitExpander from 'animakit-expander';
 
 
-class Gift extends Component {
+class GiftReceived extends Component {
   state = {
     expanded: false
   }
@@ -18,7 +18,6 @@ class Gift extends Component {
 
 
     let gift = this.props.gift;
-    console.log(gift);
     return (
       <div>
 
@@ -57,4 +56,4 @@ function mapStateToProps(state, props){
 //
 //   }
 // }
-export default connect(mapStateToProps, null)(Gift);
+export default connect(mapStateToProps, null)(GiftReceived);

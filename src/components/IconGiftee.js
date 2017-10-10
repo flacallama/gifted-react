@@ -6,6 +6,49 @@ class IconGiftee extends Component {
 
   render () {
     let giftee = this.props.giftee
+    console.log('giftee', giftee);
+
+    let birthday = null;
+    if (giftee.birthday === true){
+      birthday = <i className="fa fa-birthday-cake" aria-hidden="true"></i>
+    }
+
+    let xmas = null;
+    if (giftee.xmas === true){
+      xmas = <i className="fa fa-tree" aria-hidden="true"></i>
+    }
+
+    let valentines = null;
+    if (giftee.valentines === true){
+      valentines = <i className="fa fa-heart" aria-hidden="true"></i>
+    }
+
+    let fathersday = null;
+    if (giftee.fathersday === true){
+      fathersday = <img alt="father figure" className= "gifteeIcons" src='https://cdn2.iconfinder.com/data/icons/family-19/100/family-09-512.png'/>
+    }
+
+    let mothersday = null;
+    if (giftee.mothersday === true){
+      mothersday = <img alt="mother figure" className= "gifteeIcons" src='https://cdn4.iconfinder.com/data/icons/eldorado-navigation/40/mother_daughter_1-512.png'/>
+    }
+
+    let hanukka = null;
+    console.log('hanukka reached', giftee.hanukka);
+    if (giftee.hanukka === true){
+      console.log('inside hanukka if');
+      hanukka = <img alt="menorah" className= "gifteeIcons" src='https://maxcdn.icons8.com/Share/icon/Cultures//menorah1600.png'/>
+    }
+
+    let anniday = null;
+    if (giftee.anniday ===true){
+      anniday = <img alt="engagement ring" className= "gifteeIcons" src='https://d30y9cdsu7xlg0.cloudfront.net/png/5164-200.png'/>
+    }
+
+    let dreidel = null;
+    if (giftee.barmitzvah === true || giftee.bahmitzvah === true){
+      dreidel = <img alt="dreidel" className= "gifteeIcons" src='https://maxcdn.icons8.com/Share/icon/ios7/Holidays//dreidel1600.png'/>
+    }
 
 
 
@@ -17,26 +60,27 @@ class IconGiftee extends Component {
 
     return (
       <div>
-        {giftee.birthday ? <i className="fa fa-birthday-cake" aria-hidden="true"></i> : ''}
+        {birthday}
 
-        {giftee.xmas ? <i className="fa fa-tree" aria-hidden="true"></i> : ''}
+        {xmas}
 
-        {giftee.valentines ? <i className="fa fa-heart" aria-hidden="true"></i> : ''}
+        {valentines}
 
-        {giftee.anniday ? <img alt="engagement ring" className= "gifteeIcons" src='https://d30y9cdsu7xlg0.cloudfront.net/png/5164-200.png'/> : ''  }
-
-
-        {giftee.mothersday ? <img alt="mother figure" className= "gifteeIcons" src='https://cdn4.iconfinder.com/data/icons/eldorado-navigation/40/mother_daughter_1-512.png'/> : ''}
+        {anniday}
 
 
-        {giftee.fathersday ? <img alt="father figure" className= "gifteeIcons" src='https://cdn2.iconfinder.com/data/icons/family-19/100/family-09-512.png'/> : ''}
+        {mothersday}
 
 
 
+        {fathersday}
 
-        {giftee.barmitzvah || giftee.bahmitvah ? <img alt="dreidel" className= "gifteeIcons" src='https://maxcdn.icons8.com/Share/icon/ios7/Holidays//dreidel1600.png'/> : ''}
 
-        {giftee.hannuka ? <img alt="menorah" className= "gifteeIcons" src='https://maxcdn.icons8.com/Share/icon/Cultures//menorah1600.png'/> : ''}
+
+
+        {dreidel}
+
+        {hanukka}
 
 
       </div>

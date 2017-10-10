@@ -24,15 +24,16 @@ export const addIdea = (id, idea, notes) => {
   }
 }
 
-export const updateIdea = (id, idea, notes, past, given) => {
+export const updateIdea = (id, idea, notes, past) => {
+  console.log('inside action', id, idea, notes, past);
   return {
     type: "UPDATE_IDEA",
     payload: axios.post(`http://localhost:8089/gifts/${id}/edit`,
       {
         "idea": idea,
         "idea_notes": notes,
-        "is_past": past,
-        "date_given": given
+        "is_past": past
+
       }
     )
   }
@@ -41,7 +42,6 @@ export const updateIdea = (id, idea, notes, past, given) => {
 
 
 export const deleteGift = (id) => {
-  console.log('id', id);
   return {
     type: "DELETE_GIFT",
     payload: axios.post(`http://localhost:8089/gifts/${id}/delete`)

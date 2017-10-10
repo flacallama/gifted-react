@@ -12,15 +12,19 @@ class NewIdea extends Component {
       <div>
       <form
         onSubmit={e => { this.props.addIdeaAction(this.props.giftee.id,
-          e.target.idea.value, e.target.notes.value
+          e.target.idea.value, e.target.notes.value, e.target.past.value
         )
         e.preventDefault();
         e.target.reset();
       }}
       >
         <div className="form-group">
-          <input className="form-control" name="idea" placeholder="Gift Idea"/>
+          <input className="form-control" name="idea" placeholder="New Idea"/>
           <input className="form-control" name="notes" placeholder="Notes"/>
+          <select name='past'>
+            <option value='false'>Future</option>
+            <option value='true'>Past</option>
+          </select>
         </div>
         <div className="form-group">
           <input type="submit" className="btn btn-primary" />

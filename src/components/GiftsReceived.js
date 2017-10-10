@@ -6,19 +6,19 @@ import { addIdea } from '../actions/getGifts';
 import Gift from './Gift'
 
 
-class Gifts extends Component {
+class GiftsReceived extends Component {
 
 
 
   render () {
     let thegifts = this.props.getGifts
       .filter(gift => {
-        if (gift.giftee_id === this.props.giftee.id && gift.is_past !== true && gift.received !== true){
+        if (gift.giftee_id === this.props.giftee.id && gift.received === true){
           return true
         }
       })
       .map(gift => {
-        return <Gift key={gift.id} gift={gift} giftee={this.props.giftee}/>
+        return <GiftReceived key={gift.id} gift={gift} giftee={this.props.giftee}/>
       })
     return (
       <div>
@@ -51,4 +51,4 @@ function matchDispatchToProps(dispatch){
     addIdeaAction: bindActionCreators(addIdea, dispatch)
   }
 }
-export default connect(mapStateToProps, matchDispatchToProps)(Gifts);
+export default connect(mapStateToProps, matchDispatchToProps)(GiftsReceived);

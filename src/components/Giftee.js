@@ -18,10 +18,11 @@ class Giftee extends Component {
     let giftee = this.props.giftee;
     return (
       <div>
+        {giftee.created_at}
         {giftee.first_name} {giftee.last_name} {giftee.relationship}
+        <IconGiftee giftee={giftee} />
         <Gifts giftee={giftee}/>
         <NewIdea giftee={giftee}/>
-        <IconGiftee giftee={giftee} />
 
 
       </div>
