@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { getGifts } from '../actions/getGifts';
-import { addIdea } from '../actions/getGifts';
+
 import Gifts from './Gifts'
+import UpdateIdea from './UpdateIdea';
+import NewIdea from './NewIdea';
 
 class Giftee extends Component {
 
@@ -17,23 +19,8 @@ class Giftee extends Component {
       <div>
         {giftee.first_name} {giftee.last_name}
         <Gifts />
-
-        <form
-          onSubmit={e => { this.props.addIdeaAction(this.props.giftee.id,
-            e.target.idea.value, e.target.notes.value
-          )
-          e.preventDefault();
-          e.target.reset();
-        }}
-        >
-          <div className="form-group">
-            <input className="form-control" name="idea" placeholder="Gift Idea"/>
-            <input className="form-control" name="notes" placeholder="Notes"/>
-          </div>
-          <div className="form-group">
-            <input type="submit" className="btn btn-primary" />
-          </div>
-        </form>
+        <NewIdea giftee={giftee}/>
+        <UpdateIdea giftee={giftee}/>
 
 
       </div>
@@ -49,7 +36,7 @@ function mapStateToProps(state, props){
 function matchDispatchToProps(dispatch){
   return {
     getGiftsAction: bindActionCreators(getGifts, dispatch),
-    addIdeaAction: bindActionCreators(addIdea, dispatch)
+
   }
 }
 export default connect(mapStateToProps, matchDispatchToProps)(Giftee);

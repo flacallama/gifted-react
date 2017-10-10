@@ -24,6 +24,22 @@ export const addIdea = (id, idea, notes) => {
   }
 }
 
+export const updateIdea = (id, idea, notes, past, given) => {
+  return {
+    type: "UPDATE_IDEA",
+    payload: axios.post(`http://localhost:8089/gifts/${id}/edit`,
+      {
+        "idea": idea,
+        "idea_notes": notes,
+        "is_past": past,
+        "date_given": given
+      }
+    )
+  }
+}
+
+
+
 export const deleteGift = (id) => {
   console.log('id', id);
   return {
