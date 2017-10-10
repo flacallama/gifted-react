@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { getGifts } from '../actions/getGifts';
+import IconGiftee from './IconGiftee';
 
 import Gifts from './Gifts'
 
@@ -20,7 +21,7 @@ class Giftee extends Component {
         {giftee.first_name} {giftee.last_name} {giftee.relationship}
         <Gifts giftee={giftee}/>
         <NewIdea giftee={giftee}/>
-
+        <IconGiftee giftee={giftee} />
 
 
       </div>
