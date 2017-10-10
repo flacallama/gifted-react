@@ -23,8 +23,6 @@ class Giftee extends Component {
         <IconGiftee giftee={giftee} />
         <Gifts giftee={giftee}/>
         <NewIdea giftee={giftee}/>
-
-
       </div>
     )
   }

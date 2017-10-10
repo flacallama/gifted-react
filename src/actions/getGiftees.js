@@ -6,3 +6,10 @@ export const getGiftees = (giftees) => {
     payload: axios.get("http://localhost:8089/giftees")
   }
 }
+
+export const addGiftee = (giftee) => {
+  return {
+    type: "ADD_GIFTEE",
+    payload: axios.get("")
+  }
+}

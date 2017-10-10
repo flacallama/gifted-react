@@ -18,7 +18,7 @@ componentWillMount(){
     return (
       <div>
         <span>Giftee:</span> <span>{thegiftees} </span>
-
+        <AddGiftee />
       </div>
     )
   }
