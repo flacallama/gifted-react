@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import { getGifts } from '../actions/getGifts';
 
 import Gifts from './Gifts'
-import UpdateIdea from './UpdateIdea';
+
 import NewIdea from './NewIdea';
 
 class Giftee extends Component {
@@ -17,10 +17,10 @@ class Giftee extends Component {
     let giftee = this.props.giftee;
     return (
       <div>
-        {giftee.first_name} {giftee.last_name}
-        <Gifts />
+        {giftee.first_name} {giftee.last_name} {giftee.relationship}
+        <Gifts giftee={giftee}/>
         <NewIdea giftee={giftee}/>
-        <UpdateIdea giftee={giftee}/>
+
 
 
       </div>

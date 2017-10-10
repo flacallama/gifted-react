@@ -12,10 +12,15 @@ class Gifts extends Component {
 
   render () {
       console.log('props in gifts', this.props);
-    let thegifts = this.props.getGifts.map(gift => {
-
-      return <Gift key={gift.id} gift={gift} />
-    })
+    let thegifts = this.props.getGifts
+      .filter(gift => {
+        if (gift.giftee_id === this.props.giftee.id){
+          return true
+        }
+      })
+      .map(gift => {
+        return <Gift key={gift.id} gift={gift} giftee={this.props.giftee}/>
+      })
     return (
       <div>
         Gift Ideas:

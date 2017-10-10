@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { updateIdea } from '../actions/getGifts';
+import { deleteGift } from '../actions/getGifts';
 
 class UpdateIdea extends Component {
 
@@ -24,7 +25,7 @@ class UpdateIdea extends Component {
             <input type="submit" className="btn btn-primary" />
           </div>
         </form>
-
+        <button onClick={(e)=>this.props.deleteGiftAction(this.props.gift.id)}>delete</button>
       </div>
     )
   }
@@ -37,6 +38,7 @@ function mapStateToProps(state, props){
 
 function matchDispatchToProps(dispatch){
   return {
+    deleteGiftAction: bindActionCreators(deleteGift, dispatch),
     updateIdeaAction: bindActionCreators(updateIdea, dispatch)
   }
 }
