@@ -3,13 +3,17 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import {getGiftees} from '../actions/getGiftees';
 import UpcomingBirthday from './UpcomingBirthday';
-
+import Moment from "react-moment";
 
 class UpcomingBirthdays extends Component {
 
+state = {
+  ready: false
+}
+
 componentWillMount(){
   this.props.getGifteesAction();
-
+  this.setState({ready:true})
 }
 
   // theupcoming = () => {
@@ -25,35 +29,30 @@ componentWillMount(){
   //     }
   //   }
   render () {
-    // let upcomingevents = this.props.getGiftees ? <div>{ this.props.giftees.map(giftee =>
-    //   {<span key={giftee.id}> {giftee.name} </span> }) </div> : <div> Loading ... </div>
-    //
-    // }
-
-    console.log('the giftees', this.props.getGiftees);
-
-    // let theupcoming = this.props.getGiftees.filter(giftee=> {
-    //   if(1==1){
-    //     return <UpcomingBirthday key={giftee.id} giftee={giftee} />
+    let theupcoming = this.props.getGiftees
+      .filter(giftee=> {
+        if(giftee.birthdate){
+          return true
+        }
+      })
+    //   .sort((a,b) => {
+    // if(a[this.props.getGiftees.birthdate] > b[this.props.getGiftees.birthdate]) {
+    //   return 1;
+    //   } else if(a[this.props.getGiftees.birthdate] < b[this.props.getGiftees.birthdate]) {
+    //     return -1;
+    //   } else {
+    //     return 0;
     //   }
-    // })
+    //   })
+      .map(giftee => {
+        const dateToFormat = '2017-10-21T07:00:00.000Z';
+        return <div>{giftee.first_name} <Moment>{dateToFormat} </Moment></div>
+      })
 
+      // <Moment>{dateToFormat}</Moment>
     return (
       <div>
-
-        {this.props.getGiftees.length > 0 &&
-          <h2>
-            You have unread messages. {this.props.getGiftees.filter(giftee => {
-              if(giftee.id){
-
-                return <UpcomingBirthday key={giftee.id} giftee={giftee} />
-              }
-            })}
-          </h2>
-}
-
-
-
+        {theupcoming}
       </div>
     )
   }
