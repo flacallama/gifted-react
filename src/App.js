@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Main from './components/Main';
 import About from './components/About';
+import Upcoming from './components/Upcoming';
 import {
   BrowserRouter as Router,
   Route
@@ -21,6 +22,7 @@ class App extends Component {
 
             <Route exact path="/" component={Main}/>
             <Route path="/about" component={About}/>
+            <Route path="/upcoming" component={Upcoming}/>
 
           </div>
         </Router>

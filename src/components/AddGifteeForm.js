@@ -86,7 +86,7 @@ class AddGifteeForm extends Component {
   }
 
   bDayCalendarPop = () => {
-    if(this.state.birthday === true && this.state.birthdate == ''){
+    if(this.state.birthday === true && this.state.birthdate === ''){
       let today = new Date();
       return (
         <div>
@@ -114,7 +114,7 @@ class AddGifteeForm extends Component {
   }
 
   anniDateCalendarPop = () => {
-    if(this.state.anniday === true && this.state.annidate == ''){
+    if(this.state.anniday === true && this.state.annidate === ''){
       let today = new Date();
       return (
         <div>
@@ -136,7 +136,7 @@ class AddGifteeForm extends Component {
   render () {
 
     // var lastWeek = new Date(today.getFullYear(), today.getMonth(), today.getDate() - 7);
-    const dateToFormat = '1976-04-19T12:59-0500';
+    // const dateToFormat = '1976-04-19T12:59-0500';
     console.log('annidatedate', this.state.annidate)
     return (
       <div>

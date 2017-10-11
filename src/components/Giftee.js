@@ -7,7 +7,7 @@ import IconGiftee from './IconGiftee';
 import DeleteGiftee from './DeleteGiftee';
 import Gifts from './Gifts'
 import NewIdea from './NewIdea';
-import Moment from 'react-moment';
+
 
 
 class Giftee extends Component {
@@ -39,13 +39,11 @@ class Giftee extends Component {
 
         </div>
         <div className='gifteeExpanderDetails'>
-
           <AnimakitExpander
             expanded={this.state.expanded}
             horizontal
             align="right"
             >
-
             <DeleteGiftee giftee={giftee}/>
             <IconGiftee giftee={giftee} />
             <Gifts giftee={giftee}/>

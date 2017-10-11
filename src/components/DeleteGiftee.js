@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { getGifts } from '../actions/getGifts';
+import { deleteGiftee } from '../actions/getGiftees';
 
 class DeleteGiftee extends Component {
 
@@ -30,7 +30,7 @@ function mapStateToProps(state, props){
 
 function matchDispatchToProps(dispatch){
   return {
-    getGiftsAction: bindActionCreators(getGifts, dispatch),
+    deleteGifteeAction: bindActionCreators(deleteGiftee, dispatch),
 
   }
 }

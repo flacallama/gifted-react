@@ -1,19 +1,16 @@
 import React, { Component } from 'react';
-import Giftees from './Giftees';
 import Header from './Header';
+import UpcomingBirthdays from './UpcomingBirthdays';
 
-
-class Main extends Component {
+class Upcoming extends Component {
 
   render () {
     return (
       <div>
         <Header />
-
-        <Giftees />
-
+        <UpcomingBirthdays />
       </div>
     )
   }
 }
-export default Main;
+export default Upcoming;
