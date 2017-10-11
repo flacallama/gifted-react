@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import {getGiftees} from '../actions/getGiftees';
 import Giftee from './Giftee'
-
+import AddGiftee from './AddGiftee'
 
 class Giftees extends Component {
 
@@ -17,8 +17,9 @@ componentWillMount(){
     })
     return (
       <div>
-        <span>Giftee:</span> <span>{thegiftees} </span>
+        <span><h3></h3></span> <span>{thegiftees} </span>
         <AddGiftee />
+
       </div>
     )
   }

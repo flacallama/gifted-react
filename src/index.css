@@ -4,6 +4,14 @@ body {
   font-family: sans-serif;
 }
 
+.inline{
+  display: inline-block;
+}
+
+.right{
+  float: right;
+}
+
 .updateExpander{
   height: 30px;
   width: 150px;
@@ -12,7 +20,7 @@ body {
 
 .giftIdeaTitle{
   margin: 0px;
-  font-size: 2em;
+  font-size: 1.7em;
   font-variant: small-caps;
   font-family: helvetica;
   font-weight: bold;
@@ -27,4 +35,8 @@ body {
 .gifteeIcons{
   height: 20px;
   width: 20px;
+}
+
+.gifteeExpanderDetails{
+  margin-left: 1em;
 }

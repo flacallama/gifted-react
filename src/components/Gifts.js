@@ -25,13 +25,6 @@ class Gifts extends Component {
         Gift Ideas:
         {thegifts}
 
-
-
-
-
-
-
-
       </div>
     )
   }

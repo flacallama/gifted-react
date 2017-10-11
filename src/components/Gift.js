@@ -18,14 +18,12 @@ class Gift extends Component {
 
 
     let gift = this.props.gift;
-    console.log(gift);
+
     return (
       <div>
-
-
         <ul>
-          <li><p className="giftIdeaTitle">{gift.idea}</p></li>
-          <p className="giftIdeaNotes">{gift.idea_notes}</p>
+          <li><span className="giftIdeaTitle">{gift.idea}</span><span className="giftIdeaNotes">{gift.idea_notes}</span></li>
+
           <div className="updateExpander" onClick={() => this.expansion()}>
             Update Gift Idea
           </div>

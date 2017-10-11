@@ -8,8 +8,7 @@ class Main extends Component {
     return (
       <div>
         <Giftees />
-        <Calendar />
-
+      
       </div>
     )
   }

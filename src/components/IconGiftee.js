@@ -6,7 +6,6 @@ class IconGiftee extends Component {
 
   render () {
     let giftee = this.props.giftee
-    console.log('giftee', giftee);
 
     let birthday = null;
     if (giftee.birthday === true){
@@ -34,9 +33,7 @@ class IconGiftee extends Component {
     }
 
     let hanukka = null;
-    console.log('hanukka reached', giftee.hanukka);
     if (giftee.hanukka === true){
-      console.log('inside hanukka if');
       hanukka = <img alt="menorah" className= "gifteeIcons" src='https://maxcdn.icons8.com/Share/icon/Cultures//menorah1600.png'/>
     }
 
@@ -61,28 +58,13 @@ class IconGiftee extends Component {
     return (
       <div>
         {birthday}
-
         {xmas}
-
         {valentines}
-
         {anniday}
-
-
         {mothersday}
-
-
-
         {fathersday}
-
-
-
-
         {dreidel}
-
         {hanukka}
-
-
       </div>
     )
   }
@@ -90,8 +72,8 @@ class IconGiftee extends Component {
 
         // <img className= "gifteeIcons" src='https://d30y9cdsu7xlg0.cloudfront.net/png/75158-200.png'/>
 
-function mapStateToProps(state, props){
+// function mapStateToProps(state, props){
+//
+// }
 
-}
-
-export default connect(mapStateToProps, null)(IconGiftee);
+export default connect(null, null)(IconGiftee);
