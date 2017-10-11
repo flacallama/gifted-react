@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from './Header';
 import UpcomingBirthdays from './UpcomingBirthdays';
+import UpcomingAnniversaries from './UpcomingAnniversaries';
 
 class Upcoming extends Component {
 
@@ -9,6 +10,7 @@ class Upcoming extends Component {
       <div>
         <Header />
         <UpcomingBirthdays />
+        <UpcomingAnniversaries />
       </div>
     )
   }

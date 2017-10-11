@@ -5,7 +5,7 @@ import {getGiftees} from '../actions/getGiftees';
 var moment = require('moment');
 moment().format();
 
-class UpcomingBirthdays extends Component {
+class UpcomingAnniversaries extends Component {
 
 state = {
   ready: false
@@ -25,26 +25,26 @@ componentWillMount(){
 
     let theupcoming = this.props.getGiftees
       .filter(giftee=> {
-        if(giftee.birthdate){
+        if(giftee.annidate){
           return true
         }
       })
       .sort((a,b) => {
-        if(a[moment().format("birthdate", "MM/DD")] > b[moment().format("birthdate", "MM/DD")]) {
+        if(a[moment().format("annidate", "MM/DD")] > b[moment().format("annidate", "MM/DD")]) {
           return 1;
-          } else if(a[moment().format("birthdate", "MM/DD")] < b[moment().format("birthdate", "MM/DD")]) {
+        } else if(a[moment().format("annidate", "MM/DD")] < b[moment().format("annidate", "MM/DD")]) {
             return -1;
           } else {
             return 0;
           }
         })
       .filter(giftee => {
-        if(parseInt(giftee.birthdate.slice(5,10)) > parseInt(todaysDate)){
+        if(parseInt(giftee.annidate.slice(5,10)) > parseInt(todaysDate)){
           return true;
         }
       })
       .map(giftee => {
-        return <div>{giftee.first_name} {giftee.birthdate.slice(5,10)}</div>
+        return <div>{giftee.first_name} {giftee.annidate.slice(5,10)}</div>
       })
 
 
@@ -67,4 +67,4 @@ function matchDispatchToProps(dispatch){
     getGifteesAction: bindActionCreators(getGiftees, dispatch)
   }
 }
-export default connect(mapStateToProps, matchDispatchToProps)(UpcomingBirthdays);
+export default connect(mapStateToProps, matchDispatchToProps)(UpcomingAnniversaries);
