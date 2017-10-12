@@ -53,7 +53,7 @@ componentWillMount(){
 
     return (
       <div>
-        Anniversaries
+        <h4 className="upcomeHeading">Anniversaries</h4>
         {theupcoming}
       </div>
     )

@@ -13,10 +13,10 @@ body {
 }
 
 .updateExpander{
-  height: 30px;
+
   width: 100%;
   background-color: #f3f3f3;
-  padding-bottom: 15px;
+
 }
 
 .giftIdeaTitle{
@@ -55,4 +55,8 @@ body {
 
 .lowerIcon{
   margin-bottom: -3px;
+}
+
+.upcomeHeading{
+  margin-bottom: 5px;
 }

@@ -3,6 +3,8 @@ import Header from './Header';
 import UpcomingBirthdays from './UpcomingBirthdays';
 import UpcomingAnniversaries from './UpcomingAnniversaries';
 import UpcomingXmas from './UpcomingXmas';
+import UpcomingHanukka from './UpcomingHanukka';
+import UpcomingMothFathVal from './UpcomingMothFathVal';
 
 class Upcoming extends Component {
 
@@ -10,9 +12,13 @@ class Upcoming extends Component {
     return (
       <div>
         <Header />
-        <UpcomingBirthdays />
-        <UpcomingAnniversaries />
-        <UpcomingXmas />
+        <div className="container">
+          <UpcomingBirthdays />
+          <UpcomingAnniversaries />
+          <UpcomingXmas />
+          <UpcomingMothFathVal />
+          <UpcomingHanukka />
+        </div>
       </div>
     )
   }

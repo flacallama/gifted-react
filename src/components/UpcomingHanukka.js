@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import {getGiftees} from '../actions/getGiftees';
 
 
-class UpcomingXmas extends Component {
+class UpcomingHanukka extends Component {
 
 
 
@@ -18,8 +18,7 @@ componentWillMount(){
 
     let theupcoming = this.props.getGiftees
       .filter(giftee=> {
-        console.log(giftee.annidate)
-        if(giftee.xmas){
+        if(giftee.hanukka){
           return true
         }
       })
@@ -30,7 +29,7 @@ componentWillMount(){
 
     return (
       <div>
-        <h4 className="upcomeHeading">Christmas Gifts</h4>
+        <h4 className="upcomeHeading">Hanukka Gifts</h4>
         {theupcoming}
       </div>
     )
@@ -48,4 +47,4 @@ function matchDispatchToProps(dispatch){
     getGifteesAction: bindActionCreators(getGiftees, dispatch)
   }
 }
-export default connect(mapStateToProps, matchDispatchToProps)(UpcomingXmas);
+export default connect(mapStateToProps, matchDispatchToProps)(UpcomingHanukka);

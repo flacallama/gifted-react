@@ -50,7 +50,7 @@ componentWillMount(){
 
     return (
       <div>
-        Birthdays
+        <h4 className="upcomeHeading">Birthdays</h4>
         {theupcoming}
       </div>
     )

@@ -46,7 +46,7 @@ class Giftee extends Component {
             horizontal
             align="left"
             >
-            <DeleteGiftee giftee={giftee}/>
+            <DeleteGiftee giftee={giftee} className="right"/>
 
             <Gifts giftee={giftee}/>
             <NewIdea giftee={giftee}/>

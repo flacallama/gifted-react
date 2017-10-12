@@ -51,6 +51,7 @@ class AddGifteeForm extends Component {
   }
 
   valentinesToggle = () => {
+    console.log('valentines day toggle');
     this.setState({
       valentines: !this.state.valentines,
     });
@@ -155,36 +156,81 @@ class AddGifteeForm extends Component {
             <input className="form-control" name="relationship" placeholder="Relationship"/>
             <input className="form-control" name="email" placeholder="email"/>
             <input className="form-control" type="number" name="age" placeholder="Age"/>
-            <label>
-              Birthday
-              <input type="checkbox" name="birthday" checked={this.state.birthday} onChange={this.birthdayToggle}/>
-            </label>
+
+            <p>
+              <input
+                type="checkbox"
+                name="birthday"
+                checked={this.state.birthday}
+                onChange={this.birthdayToggle}
+                id="birthday"
+              />
+              <label          htmlFor="birthday">Birthday</label>
+            </p>
+
             {this.bDayCalendarPop()}
-            <label>
-              Christmas
-              <input type="checkbox" name="xmas" checked={this.state.xmas} onChange={this.xmasToggle}/>
-            </label>
-            <label>
-              Hanukka
-              <input type="checkbox" name="hanukka" checked={this.state.hanukka} onChange={this.hanukkaToggle}/>
-            </label>
-            <label>
-              Mothers Day
-              <input type="checkbox" name="mothersday" checked={this.state.mothersday} onChange={this.mothersdayToggle}/>
-            </label>
-            <label>
-              Fathers Day
-              <input type="checkbox" name="fathersday" checked={this.state.fathersday} onChange={this.fathersdayToggle}/>
-            </label>
-            <label>
-              Valentines Day
-              <input type="checkbox" name="valentines" checked={this.state.valentines} onChange={this.valentinesToggle}/>
-            </label>
-            <label>
-              Anniversary
-              <input type="checkbox" name="anniday" checked={this.state.anniday} onChange={this.annidayToggle}/>
-            </label>
+
+            <p>
+              <input
+                type="checkbox"
+                name="xmas"
+                checked={this.state.xmas}
+                onChange={this.xmasToggle}
+                id="xmas"
+              />
+            <label          htmlFor="xmas">Christmas</label>
+            </p>
+
+
+            <p>
+              <input
+                type="checkbox"
+                name="hanukka"
+                checked={this.state.hanukka}
+                onChange={this.hanukkaToggle}
+                id="hanukka"
+              />
+            <label          htmlFor="hanukka">Hanukka</label>
+            </p>
+
+
+            <p>
+              <input
+                type="checkbox"
+                name="mothersday"
+                checked={this.state.mothersday}
+                onChange={this.mothersdayToggle}
+                id="mothersday"
+              />
+            <label          htmlFor="mothersday">Mothers Day</label>
+            </p>
+
+
+            <p>
+              <input
+                type="checkbox"
+                name="fathersday"
+                checked={this.state.fathersday}
+                onChange={this.fathersdayToggle}
+                id="fathersday"
+              />
+            <label          htmlFor="fathersday">Fathers Day</label>
+            </p>
+
+
+            <p>
+              <input
+                type="checkbox"
+                name="anniday"
+                checked={this.state.anniday}
+                onChange={this.annidayToggle}
+                id="anniday"
+              />
+            <label          htmlFor="anniday">Anniversary</label>
+            </p>
+
             {this.anniDateCalendarPop()}
+
             <select name='budget'>
               <option value='$0-$14'>$0-$14</option>
               <option value='$15-$29'>$15-$29</option>
