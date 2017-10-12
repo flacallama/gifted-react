@@ -136,13 +136,32 @@ class AddGifteeForm extends Component {
 
   render () {
 
-    // var lastWeek = new Date(today.getFullYear(), today.getMonth(), today.getDate() - 7);
-    // const dateToFormat = '1976-04-19T12:59-0500';
-    // console.log('annidatedate', this.state.annidate)
     return (
       <div>
         <form
-          onSubmit={e => { this.props.addGifteeAction(e.target.first.value, e.target.last.value, e.target.relationship.value, e.target.email.value, e.target.age.value, this.state.birthday, this.state.birthdate, e.target.birthday_price.value, this.state.xmas, e.target.xmas_price.value, this.state.hanukka, e.target.hanukka_price.value, this.state.mothersday, e.target.mothersdat_price.value, this.state.fathersday, e.target.fathersday_price.value, this.state.valentines, e.target.valentines_price.value, this.state.anniday, this.state.annidate, e.target.anniday_price.value, e.target.budget.value
+          onSubmit={e => { this.props.addGifteeAction(
+            e.target.first.value,
+            e.target.last.value,
+            e.target.relationship.value,
+            e.target.email.value,
+            e.target.age.value,
+            this.state.birthday,
+            this.state.birthdate,
+            e.target.birthday_price.value,
+            this.state.xmas,
+            e.target.xmas_price.value,
+            this.state.hanukka,
+            e.target.hanukka_price.value,
+            this.state.mothersday,
+            e.target.mothersday_price.value,
+            this.state.fathersday,
+            e.target.fathersday_price.value,
+            this.state.valentines,
+            e.target.valentines_price.value,
+            this.state.anniday,
+            this.state.annidate,
+            e.target.anniday_price.value,
+            e.target.budget.value
           )
           e.preventDefault();
           this.resetState();

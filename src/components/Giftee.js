@@ -44,10 +44,22 @@ class Giftee extends Component {
           <Collapse
             isOpened={this.state.expanded}
           >
-            <DeleteGiftee giftee={giftee} className="right"/>
+            <div className="row">
+              <div className="col s2 l2 m2">
+                <DeleteGiftee giftee={giftee} className=""/>
+              </div>
 
-            <Gifts giftee={giftee}/>
-            <NewIdea giftee={giftee}/>
+              <div className="col m8 s8 l8">
+                <Gifts giftee={giftee}/>
+              </div>
+
+              <div className="col m4 s4 l4">
+                <NewIdea giftee={giftee}/>
+              </div>
+
+
+            </div>
+
           </Collapse>
         </div>
 

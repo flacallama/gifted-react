@@ -8,7 +8,6 @@ export const getGiftees = (giftees) => {
 }
 
 
-// e.target.first.value, e.target.last.value, e.target.relationship.value, e.target.email.value, e.target.age.value, this.state.birthday, this.state.birthdate, e.target.birthday_price.value, this.state.xmas, e.target.xmas_price.value, this.state.hanukka, e.target.hanukka_price.value, this.state.mothersday, e.target.mothersdat_price.value, this.state.fathersday, e.target.fathersday_price.value, this.state.valentines, e.target.valentines_price.value, this.state.anniday, this.state.annidate, e.target.anniday_price.value, e.target.budget.value
 
 export const addGiftee = (first, last, relationship, email, age, birthday, birthdate, birthday_price, xmas, xmas_price, hanukka, hanukka_price, mothersday, mothersday_price, fathersday, fathersday_price, valentines, valentines_price, anniday, annidate, anniday_price, budget) => {
   console.log('action', first, last, relationship, email, age, birthday, birthdate, birthday_price, xmas, xmas_price, hanukka, hanukka_price, mothersday, mothersday_price, fathersday, fathersday_price, valentines, valentines_price, anniday, annidate, anniday_price, budget);
@@ -20,7 +19,6 @@ export const addGiftee = (first, last, relationship, email, age, birthday, birth
         first_name: first,
         last_name: last,
         relationship: relationship,
-        budget: budget,
         email: email,
         age: age,
         birthday: birthday,
@@ -38,7 +36,8 @@ export const addGiftee = (first, last, relationship, email, age, birthday, birth
         valentines_price: valentines_price,
         anniday: anniday,
         annidate: annidate,
-        anniday_price: anniday_price
+        anniday_price: anniday_price,
+        budget: budget,
       }
     )
   }

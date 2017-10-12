@@ -6,6 +6,7 @@
     "animakit-expander": "^2.1.2",
     "axios": "^0.16.2",
     "jquery": "^3.2.1",
+    "materialize-css": "^0.100.2",
     "moment": "2.18.1",
     "react": "^15.6.1",
     "react-collapse": "^4.0.3",

@@ -21,7 +21,7 @@ class Gifts extends Component {
         return <Gift key={gift.id} gift={gift} giftee={this.props.giftee}/>
       })
     return (
-      <div className="container">
+      <div className="">
         Gift Ideas:
         {thegifts}
 
