@@ -4,6 +4,10 @@ body {
   font-family: sans-serif;
 }
 
+.leftMargin{
+  margin-left: 1em;
+}
+
 .inline{
   display: inline-block;
 }

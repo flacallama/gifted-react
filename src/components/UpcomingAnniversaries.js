@@ -31,17 +31,25 @@ componentWillMount(){
           return true
         }
       })
+      // .sort((a,b) => {
+      //   if(a[moment().format("annidate", "MM/DD")] > b[moment().format("annidate", "MM/DD")]) {
+      //     return 1;
+      //   } else if(a[moment().format("annidate", "MM/DD")] < b[moment().format("annidate", "MM/DD")]) {
+      //       return -1;
+      //     } else {
+      //       return 0;
+      //     }
+      //   })
       .sort((a,b) => {
-        if(a[moment().format("annidate", "MM/DD")] > b[moment().format("annidate", "MM/DD")]) {
+        if(a["annidate".valueOf()] > b["annidate".valueOf()]) {
           return 1;
-        } else if(a[moment().format("annidate", "MM/DD")] < b[moment().format("annidate", "MM/DD")]) {
+        } else if(a["annidate".valueOf()] < b["annidate".valueOf()]) {
             return -1;
           } else {
             return 0;
           }
         })
       .filter(giftee => {
-        ;
         if(parseInt(giftee.annidate.slice(5,10)) >= parseInt(todaysDate)){
           return true;
         }
@@ -50,11 +58,37 @@ componentWillMount(){
         return <div key={giftee.id}>{giftee.first_name}   budget: ${giftee.anniday_price}  date: {giftee.annidate.slice(5,10)}</div>
       })
 
+      let totalAnniveraryBudget = this.props.getGiftees
+        .filter(giftee =>{
+          if(giftee.anniday === true){
+            return true
+          }
+        })
+
+      let total = () => {
+        let result = 0;
+        for(var i = 0; i< totalAnniveraryBudget.length; i++){
+          result += totalAnniveraryBudget[i].anniday_price
+        }
+        return result
+      }
 
     return (
-      <div>
+      <div className="">
         <h4 className="upcomeHeading">Anniversaries</h4>
-        {theupcoming}
+        <div className="leftMargin">
+          <div className="row">
+            <div className="col s8">
+              {theupcoming}
+            </div>
+            <div className="col s4">
+              {total()}
+            </div>
+          </div>
+        </div>
+
+
+
       </div>
     )
   }
