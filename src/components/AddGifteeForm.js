@@ -9,16 +9,30 @@ import 'react-infinite-calendar/styles.css';
 class AddGifteeForm extends Component {
 
   state = {
+    first: null,
+    last: null,
+    relationship: null,
+    email: null,
+    age: null,
     birthday: false,
     birthdate: '',
+    birthday_price: null,
     xmas: false,
+    xmas_price: null,
     hanukka: false,
+    hanukka_price: null,
     mothersday: false,
+    mothersday_price: null,
     fathersday: false,
+    fathersday_price: null,
     valentines: false,
+    valentines_price: null,
     anniday: false,
-    annidate: ''
+    annidate: '',
+    anniday_price: null,
+    budget: null
   }
+
 
   birthdayToggle = () => {
     this.setState({
@@ -63,19 +77,19 @@ class AddGifteeForm extends Component {
     });
   }
 
-  resetState = () => {
-    this.setState({
-      birthday: false,
-      xmas: false,
-      hanukka: false,
-      mothersday: false,
-      fathersday: false,
-      valentines: false,
-      anniday: false,
-      annidate: '',
-      birthdate: ''
-    })
-  }
+  // resetState = () => {
+  //   this.setState({
+  //     birthday: false,
+  //     xmas: false,
+  //     hanukka: false,
+  //     mothersday: false,
+  //     fathersday: false,
+  //     valentines: false,
+  //     anniday: false,
+  //     annidate: '',
+  //     birthdate: ''
+  //   })
+  // }
 
 
 
@@ -111,7 +125,6 @@ class AddGifteeForm extends Component {
     this.setState({
       annidate: strDate
     })
-    console.log(this.state.annidate);
   }
 
   anniDateCalendarPop = () => {
@@ -137,45 +150,46 @@ class AddGifteeForm extends Component {
   render () {
 
     return (
-      <div>
+      <div className="row">
         <form
           onSubmit={e => { this.props.addGifteeAction(
-            e.target.first.value,
-            e.target.last.value,
-            e.target.relationship.value,
-            e.target.email.value,
-            e.target.age.value,
+            this.state.first,
+            this.state.last,
+            this.state.relationship,
+            this.state.email,
+            this.state.age,
             this.state.birthday,
             this.state.birthdate,
-            e.target.birthday_price.value,
+            this.state.birthday_price,
             this.state.xmas,
-            e.target.xmas_price.value,
+            this.state.xmas_price,
             this.state.hanukka,
-            e.target.hanukka_price.value,
+            this.state.hanukka_price,
             this.state.mothersday,
-            e.target.mothersday_price.value,
+            this.state.mothersday_price,
             this.state.fathersday,
-            e.target.fathersday_price.value,
+            this.state.fathersday_price,
             this.state.valentines,
-            e.target.valentines_price.value,
+            this.state.valentines_price,
             this.state.anniday,
             this.state.annidate,
-            e.target.anniday_price.value,
-            e.target.budget.value
+            this.state.anniday_price,
+            this.state.budget
           )
           e.preventDefault();
-          this.resetState();
+          // this.resetState();
           e.target.reset();
         }}
 
         >
-          <div className="form-group">
-            <input className="form-control" name="first" placeholder="First Name" />
-            <input className="form-control" name="last" placeholder="Last Name"/>
-            <input className="form-control" name="relationship" placeholder="Relationship"/>
-            <input className="form-control" name="email" placeholder="email"/>
-            <input className="form-control" type="number" name="age" placeholder="Age"/>
-
+          <div className="col s4">
+            <input className="form-control" name="first" placeholder="First Name" onChange={e => this.setState({first: e.target.value})}/>
+            <input className="form-control" name="last" placeholder="Last Name" onChange={e => this.setState({last: e.target.value})}/>
+            <input className="form-control" name="relationship" placeholder="Relationship" onChange={e => this.setState({relationship: e.target.value})}/>
+            <input className="form-control" name="email" placeholder="email" onChange={e => this.setState({email: e.target.value})}/>
+            <input className="form-control" type="number" name="age" placeholder="Age" onChange={e => this.setState({age: e.target.value})}/>
+          </div>
+          <div className="col s4">
             <p>
               <input
                 type="checkbox"
@@ -189,7 +203,14 @@ class AddGifteeForm extends Component {
 
             {this.bDayCalendarPop()}
 
-            {this.state.birthday ? <input className="form-control" type="number" name="birthday_price" placeholder="Birthday Budget"/> : ''}
+            {this.state.birthday ? <input
+                className="form-control"
+                type="number"
+                name="birthday_price"
+                placeholder="Birthday Budget"
+                onChange={e => this.setState({ birthday_price: e.target.value })}
+            />
+            : ''}
 
             <p>
               <input
@@ -202,7 +223,7 @@ class AddGifteeForm extends Component {
             <label          htmlFor="xmas">Christmas</label>
             </p>
 
-            {this.state.xmas ? <input className="form-control" type="number" name="xmas_price" placeholder="Christmas Budget"/> : ''}
+            {this.state.xmas ? <input className="form-control" type="number" name="xmas_price" placeholder="Christmas Budget" onChange={e => this.setState({xmas_price: e.target.value})}/> : ''}
 
             <p>
               <input
@@ -215,7 +236,7 @@ class AddGifteeForm extends Component {
             <label          htmlFor="hanukka">Hanukka</label>
             </p>
 
-            {this.state.hanukka ? <input className="form-control" type="number" name="hanukka_price" placeholder="Hanukka Budget"/> : ''}
+            {this.state.hanukka ? <input className="form-control" type="number" name="hanukka_price" placeholder="Hanukka Budget" onChange={e => this.setState({hanukka_price: e.target.value})}/> : ''}
 
             <p>
               <input
@@ -228,7 +249,10 @@ class AddGifteeForm extends Component {
             <label          htmlFor="mothersday">Mothers Day</label>
             </p>
 
-            {this.state.mothersday ? <input className="form-control" type="number" name="mothersday_price" placeholder="Mothers Day Budget"/> : ''}
+            {this.state.mothersday ? <input className="form-control" type="number" name="mothersday_price" placeholder="Mothers Day Budget" onChange={e => this.setState({mothersday_price: e.target.value})}/> : ''}
+
+          </div>
+          <div className="col s4">
 
             <p>
               <input
@@ -241,7 +265,7 @@ class AddGifteeForm extends Component {
             <label          htmlFor="fathersday">Fathers Day</label>
             </p>
 
-            {this.state.fathersday ? <input className="form-control" type="number" name="fathersday_price" placeholder="Fathers Day Budget"/> : ''}
+            {this.state.fathersday ? <input className="form-control" type="number" name="fathersday_price" placeholder="Fathers Day Budget" onChange={e => this.setState({fathersday_price: e.target.value})}/> : ''}
 
             <p>
               <input
@@ -254,7 +278,7 @@ class AddGifteeForm extends Component {
             <label          htmlFor="valentines">Valentines Day</label>
             </p>
 
-            {this.state.valentines ? <input className="form-control" type="number" name="valentines_price" placeholder="Valentines Day Budget"/> : ''}
+            {this.state.valentines ? <input className="form-control" type="number" name="valentines_price" placeholder="Valentines Day Budget" onChange={e => this.setState({valentines_price: e.target.value})}/> : ''}
 
             <p>
               <input
@@ -269,7 +293,7 @@ class AddGifteeForm extends Component {
 
             {this.anniDateCalendarPop()}
 
-            {this.state.anniday ? <input className="form-control" type="number" name="anniday_price" placeholder="Anniversary Budget"/> : ''}
+            {this.state.anniday ? <input className="form-control" type="number" name="anniday_price" placeholder="Anniversary Budget" onChange={e => this.setState({anniday_price: e.target.value})}/> : ''}
 
             <select name='budget'>
               <option value='$0-$14'>$0-$14</option>

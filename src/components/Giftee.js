@@ -14,11 +14,16 @@ class Giftee extends Component {
 
 
   state = {
-    expanded: false
+    expanded: false,
+    innerExpanded: false
   }
 
   expansion() {
     this.setState({expanded: !this.state.expanded})
+  }
+
+  innerExpansion() {
+    this.setState({expanded: !this.state.innerExpanded})
   }
 
   componentWillMount() {
@@ -44,17 +49,27 @@ class Giftee extends Component {
           <Collapse
             isOpened={this.state.expanded}
           >
+
             <div className="row">
-              <div className="col s2 l2 m2">
+              <div className="col s2">
                 <DeleteGiftee giftee={giftee} className=""/>
               </div>
 
-              <div className="col m8 s8 l8">
+              <div className="col s6">
                 <Gifts giftee={giftee}/>
               </div>
 
-              <div className="col m4 s4 l4">
-                <NewIdea giftee={giftee}/>
+              <div className="col s4">
+                <div className="updateExpander" onClick={() => this.innerExpansion()}>
+                  Add Gift Idea
+                </div>
+
+                <Collapse
+                  isOpened={this.state.innerExpanded}
+                >
+                  <NewIdea giftee={giftee}/>
+                </Collapse>
+
               </div>
 
 

@@ -26,7 +26,7 @@ componentWillMount(){
 
     let theupcoming = this.props.getGiftees
       .filter(giftee=> {
-        console.log(giftee.annidate)
+        console.log('annidate', giftee.annidate)
         if(giftee.annidate){
           return true
         }
@@ -47,7 +47,7 @@ componentWillMount(){
         }
       })
       .map(giftee => {
-        return <div>{giftee.first_name}   budget: ${giftee.anniday_price}  date: {giftee.annidate.slice(5,10)}</div>
+        return <div key={giftee.id}>{giftee.first_name}   budget: ${giftee.anniday_price}  date: {giftee.annidate.slice(5,10)}</div>
       })
 
 

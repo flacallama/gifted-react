@@ -18,13 +18,12 @@ componentWillMount(){
 
     let theupcoming = this.props.getGiftees
       .filter(giftee=> {
-        console.log(giftee.annidate)
         if(giftee.xmas){
           return true
         }
       })
       .map(giftee => {
-        return <div>{giftee.first_name} Budget: ${giftee.xmas_price}</div>
+        return <div  key={giftee.id}>{giftee.first_name} Budget: ${giftee.xmas_price}</div>
       })
 
 
