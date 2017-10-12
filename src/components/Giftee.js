@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { getGifts } from '../actions/getGifts';
-import AnimakitExpander from 'animakit-expander';
+import {Collapse} from 'react-collapse';
 import IconGiftee from './IconGiftee';
 import DeleteGiftee from './DeleteGiftee';
 import Gifts from './Gifts'
@@ -41,16 +41,14 @@ class Giftee extends Component {
 
         </div>
         <div className='gifteeExpanderDetails'>
-          <AnimakitExpander
-            expanded={this.state.expanded}
-            horizontal
-            align="left"
-            >
+          <Collapse
+            isOpened={this.state.expanded}
+          >
             <DeleteGiftee giftee={giftee} className="right"/>
 
             <Gifts giftee={giftee}/>
             <NewIdea giftee={giftee}/>
-          </AnimakitExpander>
+          </Collapse>
         </div>
 
 

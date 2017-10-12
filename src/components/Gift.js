@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 // import { bindActionCreators } from 'redux';
 import UpdateIdea from './UpdateIdea';
-import AnimakitExpander from 'animakit-expander';
+import {Collapse} from 'react-collapse';
+
 
 
 class Gift extends Component {
@@ -20,7 +21,7 @@ class Gift extends Component {
     let gift = this.props.gift;
 
     return (
-      <div>
+      <div className="container">
         <ul>
           <li><span className="giftIdeaTitle">{gift.idea}</span><span className="giftIdeaNotes">{gift.idea_notes}</span></li>
 
@@ -28,13 +29,11 @@ class Gift extends Component {
             Update Gift Idea
           </div>
           <div>
-            <AnimakitExpander
-              expanded={this.state.expanded}
-              horizontal
-              align="right"
+            <Collapse
+              isOpened={this.state.expanded}
               >
               <UpdateIdea giftee={this.props.giftee} gift={gift}/>
-            </AnimakitExpander>
+            </Collapse>
           </div>
         </ul>
       </div>

@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { addGiftee } from '../actions/getGiftees';
 import AddGifteeForm  from './AddGifteeForm';
+import {Collapse} from 'react-collapse';
 import AnimakitExpander from 'animakit-expander';
 
 class AddGiftee extends Component {
@@ -27,14 +28,11 @@ class AddGiftee extends Component {
             <h4>Add a new giftee</h4>
           </div>
           <div className='gifteeExpanderDetails'>
-            <AnimakitExpander
-              expanded={this.state.expanded}
-              horizontal
-              align="right"
-              >
+            <Collapse
+              isOpened={this.state.expanded}
+            >
               <AddGifteeForm />
-
-            </AnimakitExpander>
+            </Collapse>
           </div>
 
 
