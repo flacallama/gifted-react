@@ -35,17 +35,19 @@ class Giftee extends Component {
 
           <div className="inline">
             <p>{giftee.first_name} {giftee.last_name}</p>
+
           </div>
+          <div className='inline'><IconGiftee giftee={giftee} /></div>
 
         </div>
         <div className='gifteeExpanderDetails'>
           <AnimakitExpander
             expanded={this.state.expanded}
             horizontal
-            align="right"
+            align="left"
             >
             <DeleteGiftee giftee={giftee}/>
-            <IconGiftee giftee={giftee} />
+
             <Gifts giftee={giftee}/>
             <NewIdea giftee={giftee}/>
           </AnimakitExpander>

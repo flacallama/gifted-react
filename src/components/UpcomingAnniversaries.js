@@ -22,9 +22,11 @@ componentWillMount(){
     var ts = moment(ttoday).valueOf();
     var m = moment(ts);
     var todaysDate = m.format("MM/DD");
+    console.log("todaysDate", todaysDate);
 
     let theupcoming = this.props.getGiftees
       .filter(giftee=> {
+        console.log(giftee.annidate)
         if(giftee.annidate){
           return true
         }
@@ -39,7 +41,8 @@ componentWillMount(){
           }
         })
       .filter(giftee => {
-        if(parseInt(giftee.annidate.slice(5,10)) > parseInt(todaysDate)){
+        ;
+        if(parseInt(giftee.annidate.slice(5,10)) >= parseInt(todaysDate)){
           return true;
         }
       })
@@ -50,6 +53,7 @@ componentWillMount(){
 
     return (
       <div>
+        Anniversaries
         {theupcoming}
       </div>
     )

@@ -186,11 +186,11 @@ class AddGifteeForm extends Component {
             </label>
             {this.anniDateCalendarPop()}
             <select name='budget'>
-              <option value='0-14'>$0-$14</option>
-              <option value='15-29'>$15-$29</option>
-              <option value='30-49'>$30-$49</option>
-              <option value='50-99'>$50-$99</option>
-              <option value='100'>$100+</option>
+              <option value='$0-$14'>$0-$14</option>
+              <option value='$15-$29'>$15-$29</option>
+              <option value='$30-$49'>$30-$49</option>
+              <option value='$50-$99'>$50-$99</option>
+              <option value='$100'>$100+</option>
             </select>
           </div>
           <div className="form-group">

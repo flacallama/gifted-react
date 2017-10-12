@@ -24,7 +24,7 @@ class Gift extends Component {
         <ul>
           <li><span className="giftIdeaTitle">{gift.idea}</span><span className="giftIdeaNotes">{gift.idea_notes}</span></li>
 
-          <div className="updateExpander" onClick={() => this.expansion()}>
+          <div className="" onClick={() => this.expansion()}>
             Update Gift Idea
           </div>
           <div>

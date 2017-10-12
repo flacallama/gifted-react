@@ -24,22 +24,22 @@ class IconGiftee extends Component {
 
     let fathersday = null;
     if (giftee.fathersday === true){
-      fathersday = <img alt="father figure" className= "gifteeIcons" src='https://cdn2.iconfinder.com/data/icons/family-19/100/family-09-512.png'/>
+      fathersday = <img alt="father figure" className= "gifteeIcons lowerIcon" src='https://cdn2.iconfinder.com/data/icons/family-19/100/family-09-512.png'/>
     }
 
     let mothersday = null;
     if (giftee.mothersday === true){
-      mothersday = <img alt="mother figure" className= "gifteeIcons" src='https://cdn4.iconfinder.com/data/icons/eldorado-navigation/40/mother_daughter_1-512.png'/>
+      mothersday = <img alt="mother figure" className= "gifteeIcons lowerIcon" src='https://cdn4.iconfinder.com/data/icons/eldorado-navigation/40/mother_daughter_1-512.png'/>
     }
 
     let hanukka = null;
     if (giftee.hanukka === true){
-      hanukka = <img alt="menorah" className= "gifteeIcons" src='https://maxcdn.icons8.com/Share/icon/Cultures//menorah1600.png'/>
+      hanukka = <img alt="menorah" className= "gifteeIcons lowerIcon" src='https://maxcdn.icons8.com/Share/icon/Cultures//menorah1600.png'/>
     }
 
     let anniday = null;
     if (giftee.anniday ===true){
-      anniday = <img alt="engagement ring" className= "gifteeIcons" src='https://d30y9cdsu7xlg0.cloudfront.net/png/5164-200.png'/>
+      anniday = <img alt="engagement ring" className= "gifteeIcons lowerIcon" src='https://d30y9cdsu7xlg0.cloudfront.net/png/5164-200.png'/>
     }
 
     let dreidel = null;
@@ -56,7 +56,7 @@ class IconGiftee extends Component {
 
 
     return (
-      <div>
+      <div className="iconGroup">
         {birthday}
         {xmas}
         {valentines}

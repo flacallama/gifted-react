@@ -50,6 +50,7 @@ componentWillMount(){
 
     return (
       <div>
+        Birthdays
         {theupcoming}
       </div>
     )

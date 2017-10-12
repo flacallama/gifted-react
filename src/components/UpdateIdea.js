@@ -8,7 +8,7 @@ class UpdateIdea extends Component {
 
   render () {
     return (
-      <div>
+      <div className="updateIdea">
         <form
           onSubmit={e => { this.props.updateIdeaAction(this.props.gift.id,
             e.target.idea.value, e.target.notes.value,
