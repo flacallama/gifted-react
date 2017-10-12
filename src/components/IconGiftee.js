@@ -57,14 +57,14 @@ class IconGiftee extends Component {
 
     return (
       <div className="iconGroup">
-        {birthday}
-        {xmas}
-        {valentines}
-        {anniday}
-        {mothersday}
-        {fathersday}
-        {dreidel}
-        {hanukka}
+          {birthday}
+          {xmas}
+          {valentines}
+          {anniday}
+          {mothersday}
+          {fathersday}
+          {dreidel}
+          {hanukka}
       </div>
     )
   }

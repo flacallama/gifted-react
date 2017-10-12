@@ -44,14 +44,58 @@ componentWillMount(){
         }
       })
       .map(giftee => {
-        return <div key={giftee.id}>{giftee.first_name}  budget: ${giftee.birthday_price} date: {giftee.birthdate.slice(5,10)}</div>
+        return (
+          <div key={giftee.id}>
+            <div className="row displayRow">
+              <div className="col s3">
+                {giftee.first_name} {giftee.last_name}
+              </div>
+              <div className="col s3">
+                budget: ${giftee.birthday_price}
+              </div>
+              <div className="col s3">
+                date: {giftee.birthdate.slice(5,10)}
+              </div>
+            </div>
+          </div>
+        )
+
       })
 
 
+
+      let totalDdayArr = this.props.getGiftees
+        .filter(giftee =>{
+          if(giftee.birthday === true && parseInt(giftee.birthdate.slice(5,10)) > parseInt(todaysDate)){
+            return true
+          }
+        })
+
+      let total = () => {
+        let result = 0;
+        for(var i = 0; i < totalDdayArr.length; i++){
+          result += totalDdayArr[i].birthday_price
+        }
+        return result
+      }
+
+
     return (
-      <div>
-        <h4 className="upcomeHeading">Birthdays</h4>
-        {theupcoming}
+      <div className="">
+        <h4 className="upcomeHeading">Upcoming Birthdays</h4>
+        <div className="leftMargin">
+          <div className="row noBottomMargin" >
+            <div className="col s8 noBottomMargin">
+              {theupcoming}
+            </div>
+          </div>
+          <hr/>
+          <div className="row">
+            <div className="right rightMargin">
+              <h5>${total()}</h5>
+            </div>
+          </div>
+        </div>
       </div>
     )
   }

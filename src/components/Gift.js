@@ -22,20 +22,19 @@ class Gift extends Component {
 
     return (
       <div className="container">
-        <ul>
-          <li><span className="giftIdeaTitle">{gift.idea}</span><span className="giftIdeaNotes">{gift.idea_notes}</span></li>
+        <div className="inline" onClick={() => this.expansion()}>
+          <i className="fa fa-pencil-square-o" aria-hidden="true"></i>
+        </div>
+        <span className="giftIdeaTitle">{gift.idea}</span>
+        <span className="giftIdeaNotes">{gift.idea_notes}</span>
+        <div>
+          <Collapse
+            isOpened={this.state.expanded}
+            >
+            <UpdateIdea giftee={this.props.giftee} gift={gift}/>
+          </Collapse>
+        </div>
 
-          <div className="" onClick={() => this.expansion()}>
-            Update Gift Idea
-          </div>
-          <div>
-            <Collapse
-              isOpened={this.state.expanded}
-              >
-              <UpdateIdea giftee={this.props.giftee} gift={gift}/>
-            </Collapse>
-          </div>
-        </ul>
       </div>
     )
   }

@@ -13,8 +13,9 @@ class Header extends Component {
               <li><NavLink to="/about">About</NavLink></li>
               <li><NavLink to="/upcoming">Upcoming</NavLink></li>
             </ul>
-            <div className="inline">
-
+            <div className="inline right">
+              
+              <div className="hit-the-floor">gifted</div>
             </div>
         </nav>
       </div>

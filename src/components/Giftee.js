@@ -23,7 +23,7 @@ class Giftee extends Component {
   }
 
   innerExpansion() {
-    this.setState({expanded: !this.state.innerExpanded})
+    this.setState({innerExpanded: !this.state.innerExpanded})
   }
 
   componentWillMount() {
@@ -39,10 +39,10 @@ class Giftee extends Component {
         <div className="updateExpander" onClick={() => this.expansion()}>
 
           <div className="inline">
-            <p>{giftee.first_name} {giftee.last_name}</p>
+            <h5>{giftee.first_name} {giftee.last_name}</h5>
 
           </div>
-          <div className='inline'><IconGiftee giftee={giftee} /></div>
+          <div className='inline right rightMargin topMargin'><IconGiftee giftee={giftee} /></div>
 
         </div>
         <div className='gifteeExpanderDetails'>
@@ -55,13 +55,13 @@ class Giftee extends Component {
                 <DeleteGiftee giftee={giftee} className=""/>
               </div>
 
-              <div className="col s6">
+              <div className="col s8">
                 <Gifts giftee={giftee}/>
               </div>
 
-              <div className="col s4">
-                <div className="updateExpander" onClick={() => this.innerExpansion()}>
-                  Add Gift Idea
+              <div className="col s2">
+                <div className="updateExpander right rightMargin" onClick={() => this.innerExpansion()}>
+                  <i className="fa fa-plus" aria-hidden="true"></i><p>new gift</p>
                 </div>
 
                 <Collapse

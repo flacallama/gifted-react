@@ -8,6 +8,18 @@ body {
   margin-left: 1em;
 }
 
+.rightMargin{
+  margin-right: 3em;
+}
+
+.topMargin{
+  margin-top: 1em;
+}
+
+.noBottomMargin{
+  margin-bottom: 0px !important;
+}
+
 .inline{
   display: inline-block;
 }
@@ -16,10 +28,34 @@ body {
   float: right;
 }
 
+
+/*  Gift ideas page */
+
 .updateExpander{
   width: 100%;
   background-color: #f3f3f3;
+  border: 2px solid white;
 }
+
+
+/* logo */
+.hit-the-floor {
+margin-right: 1em;
+top: -15px;
+color: #fff;
+font-size: 3em;
+font-weight: bold;
+font-family: Garamond;
+text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1);
+}
+
+.hit-the-floor {
+  text-align: center;
+}
+
+
+
+
 
 .giftIdeaTitle{
   background-color: green;
@@ -37,6 +73,17 @@ body {
   font-family: helvetica;
 }
 
+
+.test{
+  height: 10px;
+  width: 10px;
+  background-color: red;
+}
+
+.addGiftIdeaForm{
+  height: .5em;
+}
+
 .updateIdea{
   background-color: lightgreen;
 }
@@ -48,7 +95,7 @@ body {
 
 .gifteeExpanderDetails{
   margin-left: 1em;
-  background-color: blue;
+  background-color: darkgrey;
 }
 
 .iconGroup{
@@ -61,4 +108,12 @@ body {
 
 .upcomeHeading{
   margin-bottom: 5px;
+}
+
+
+
+/* Upcoming Page*/
+
+.displayRow{
+  height: .3em;
 }

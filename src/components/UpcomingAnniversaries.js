@@ -55,12 +55,26 @@ componentWillMount(){
         }
       })
       .map(giftee => {
-        return <div key={giftee.id}>{giftee.first_name}   budget: ${giftee.anniday_price}  date: {giftee.annidate.slice(5,10)}</div>
+        return (
+          <div key={giftee.id}>
+            <div className="row displayRow">
+              <div className="col s3">
+                {giftee.first_name} {giftee.last_name}
+              </div>
+              <div className="col s3">
+                budget: ${giftee.anniday_price}
+              </div>
+              <div className="col s3">
+                date: {giftee.annidate.slice(5,10)}
+              </div>
+            </div>
+          </div>
+        )
       })
 
       let totalAnniveraryBudget = this.props.getGiftees
         .filter(giftee =>{
-          if(giftee.anniday === true){
+          if(giftee.anniday === true && parseInt(giftee.annidate.slice(5,10)) >= parseInt(todaysDate)){
             return true
           }
         })
@@ -77,18 +91,18 @@ componentWillMount(){
       <div className="">
         <h4 className="upcomeHeading">Anniversaries</h4>
         <div className="leftMargin">
-          <div className="row">
-            <div className="col s8">
+          <div className="row noBottomMargin" >
+            <div className="col s8 noBottomMargin">
               {theupcoming}
             </div>
-            <div className="col s4">
-              {total()}
+          </div>
+          <hr/>
+          <div className="row">
+            <div className="right rightMargin">
+              <h5>${total()}</h5>
             </div>
           </div>
         </div>
-
-
-
       </div>
     )
   }
