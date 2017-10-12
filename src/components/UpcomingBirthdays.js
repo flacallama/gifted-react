@@ -44,7 +44,7 @@ componentWillMount(){
         }
       })
       .map(giftee => {
-        return <div>{giftee.first_name} {giftee.birthdate.slice(5,10)}</div>
+        return <div>{giftee.first_name}  budget: ${giftee.birthday_price} date: {giftee.birthdate.slice(5,10)}</div>
       })
 
 

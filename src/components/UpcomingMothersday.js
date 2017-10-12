@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import {getGiftees} from '../actions/getGiftees';
 
 
-class UpcomingMothFathVal extends Component {
+class UpcomingMothersday extends Component {
 
 
 
@@ -18,18 +18,18 @@ componentWillMount(){
 
     let theupcoming = this.props.getGiftees
       .filter(giftee=> {
-        if(giftee.mothersday || giftee.fathersday || giftee.valentines){
+        if(giftee.mothersday){
           return true
         }
       })
       .map(giftee => {
-        return <div>{giftee.first_name} {giftee.last_name} Budget:{giftee.budget}</div>
+        return <div>{giftee.first_name} Budget: ${giftee.mothersday_price}</div>
       })
 
 
     return (
       <div>
-        <h4 className="upcomeHeading">Mothers/Fathers day, Valentines</h4>
+        <h4 className="upcomeHeading">Mothers Day</h4>
         {theupcoming}
       </div>
     )
@@ -47,4 +47,4 @@ function matchDispatchToProps(dispatch){
     getGifteesAction: bindActionCreators(getGiftees, dispatch)
   }
 }
-export default connect(mapStateToProps, matchDispatchToProps)(UpcomingMothFathVal);
+export default connect(mapStateToProps, matchDispatchToProps)(UpcomingMothersday);

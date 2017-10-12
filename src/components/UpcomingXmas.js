@@ -24,7 +24,7 @@ componentWillMount(){
         }
       })
       .map(giftee => {
-        return <div>{giftee.first_name} {giftee.last_name} Budget:{giftee.budget}</div>
+        return <div>{giftee.first_name} Budget: ${giftee.xmas_price}</div>
       })
 
 

@@ -138,11 +138,11 @@ class AddGifteeForm extends Component {
 
     // var lastWeek = new Date(today.getFullYear(), today.getMonth(), today.getDate() - 7);
     // const dateToFormat = '1976-04-19T12:59-0500';
-    console.log('annidatedate', this.state.annidate)
+    // console.log('annidatedate', this.state.annidate)
     return (
       <div>
         <form
-          onSubmit={e => { this.props.addGifteeAction(e.target.first.value, e.target.last.value, e.target.relationship.value, e.target.email.value, e.target.age.value, this.state.birthday, this.state.birthdate, this.state.xmas, this.state.hanukka, this.state.mothersday, this.state.fathersday, this.state.valentines, this.state.anniday, this.state.annidate, e.target.budget.value
+          onSubmit={e => { this.props.addGifteeAction(e.target.first.value, e.target.last.value, e.target.relationship.value, e.target.email.value, e.target.age.value, this.state.birthday, this.state.birthdate, e.target.birthday_price.value, this.state.xmas, e.target.xmas_price.value, this.state.hanukka, e.target.hanukka_price.value, this.state.mothersday, e.target.mothersdat_price.value, this.state.fathersday, e.target.fathersday_price.value, this.state.valentines, e.target.valentines_price.value, this.state.anniday, this.state.annidate, e.target.anniday_price.value, e.target.budget.value
           )
           e.preventDefault();
           this.resetState();
@@ -170,6 +170,8 @@ class AddGifteeForm extends Component {
 
             {this.bDayCalendarPop()}
 
+            {this.state.birthday ? <input className="form-control" type="number" name="birthday_price" placeholder="Birthday Budget"/> : ''}
+
             <p>
               <input
                 type="checkbox"
@@ -181,6 +183,7 @@ class AddGifteeForm extends Component {
             <label          htmlFor="xmas">Christmas</label>
             </p>
 
+            {this.state.xmas ? <input className="form-control" type="number" name="xmas_price" placeholder="Christmas Budget"/> : ''}
 
             <p>
               <input
@@ -193,6 +196,7 @@ class AddGifteeForm extends Component {
             <label          htmlFor="hanukka">Hanukka</label>
             </p>
 
+            {this.state.hanukka ? <input className="form-control" type="number" name="hanukka_price" placeholder="Hanukka Budget"/> : ''}
 
             <p>
               <input
@@ -205,6 +209,7 @@ class AddGifteeForm extends Component {
             <label          htmlFor="mothersday">Mothers Day</label>
             </p>
 
+            {this.state.mothersday ? <input className="form-control" type="number" name="mothersday_price" placeholder="Mothers Day Budget"/> : ''}
 
             <p>
               <input
@@ -217,6 +222,20 @@ class AddGifteeForm extends Component {
             <label          htmlFor="fathersday">Fathers Day</label>
             </p>
 
+            {this.state.fathersday ? <input className="form-control" type="number" name="fathersday_price" placeholder="Fathers Day Budget"/> : ''}
+
+            <p>
+              <input
+                type="checkbox"
+                name="valentines"
+                checked={this.state.valentines}
+                onChange={this.valentinesToggle}
+                id="valentines"
+              />
+            <label          htmlFor="valentines">Valentines Day</label>
+            </p>
+
+            {this.state.valentines ? <input className="form-control" type="number" name="valentines_price" placeholder="Valentines Day Budget"/> : ''}
 
             <p>
               <input
@@ -230,6 +249,8 @@ class AddGifteeForm extends Component {
             </p>
 
             {this.anniDateCalendarPop()}
+
+            {this.state.anniday ? <input className="form-control" type="number" name="anniday_price" placeholder="Anniversary Budget"/> : ''}
 
             <select name='budget'>
               <option value='$0-$14'>$0-$14</option>

@@ -4,7 +4,7 @@ import UpcomingBirthdays from './UpcomingBirthdays';
 import UpcomingAnniversaries from './UpcomingAnniversaries';
 import UpcomingXmas from './UpcomingXmas';
 import UpcomingHanukka from './UpcomingHanukka';
-import UpcomingMothFathVal from './UpcomingMothFathVal';
+import UpcomingMothersday from './UpcomingMothersday';
 
 class Upcoming extends Component {
 
@@ -16,7 +16,7 @@ class Upcoming extends Component {
           <UpcomingBirthdays />
           <UpcomingAnniversaries />
           <UpcomingXmas />
-          <UpcomingMothFathVal />
+          <UpcomingMothersday />
           <UpcomingHanukka />
         </div>
       </div>
