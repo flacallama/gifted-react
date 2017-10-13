@@ -15,9 +15,12 @@ componentWillMount(){
     let thegiftees = this.props.getGiftees.map(giftee => {
       return <Giftee key={giftee.id} giftee={giftee} />
     })
+
+    let gifteesLength = this.props.getGiftees.length;
+
     return (
       <div>
-        <span className='center'><h3>Gift Recipients</h3></span> 
+        <span className='center'><h3>You Have {gifteesLength} Gift Recipients</h3></span> 
         <span>{thegiftees} </span>
         <AddGiftee className="verticalAlignMiddle"/>
 
