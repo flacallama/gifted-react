@@ -39,8 +39,13 @@ class Giftee extends Component {
         <div className="updateExpander" onClick={() => this.expansion()}>
 
           <div className="inline">
-            <h5>{giftee.first_name} {giftee.last_name}</h5>
+            <div className="inline">
+              <h5 className="leftMargin">{giftee.first_name} {giftee.last_name}</h5>
+            </div>
 
+            <div className="inline leftMargin">
+              {this.state.expanded ? <DeleteGiftee giftee={giftee} className=""/> : ''}
+            </div>
           </div>
           <div className='inline right rightMargin topMargin'><IconGiftee giftee={giftee} /></div>
 
@@ -51,24 +56,22 @@ class Giftee extends Component {
           >
 
             <div className="row">
-              <div className="col s2">
-                <DeleteGiftee giftee={giftee} className=""/>
-              </div>
-
               <div className="col s8">
                 <Gifts giftee={giftee}/>
               </div>
-
-              <div className="col s2">
-                <div className="updateExpander right rightMargin" onClick={() => this.innerExpansion()}>
-                  <i className="fa fa-plus" aria-hidden="true"></i><p>new gift</p>
+              <div className="col s4">
+                <div className='inline left'>
+                  <Collapse
+                    isOpened={this.state.innerExpanded}
+                  >
+                    <NewIdea giftee={giftee}/>
+                  </Collapse>
+                </div>
+                <div className="right rightMargin inline" onClick={() => this.innerExpansion()}>
+                  {!this.state.innerExpanded ? <h4><i className="fa fa-plus inline" aria-hidden="true"></i></h4> : <h4><i className="fa fa-minus inline" aria-hidden="true"></i></h4>}
                 </div>
 
-                <Collapse
-                  isOpened={this.state.innerExpanded}
-                >
-                  <NewIdea giftee={giftee}/>
-                </Collapse>
+
 
               </div>
 

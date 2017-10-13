@@ -22,12 +22,12 @@ componentWillMount(){
     var ts = moment(ttoday).valueOf();
     var m = moment(ts);
     var todaysDate = m.format("MM/DD");
-    console.log("todaysDate", todaysDate);
 
+console.log('first getGiftees', this.props.getGiftees);
     let theupcoming = this.props.getGiftees
       .filter(giftee=> {
-        console.log('annidate', giftee.annidate)
-        if(giftee.annidate){
+        console.log('first filter', giftee.anniday_price);
+        if(1===1){
           return true
         }
       })
@@ -50,15 +50,17 @@ componentWillMount(){
           }
         })
       .filter(giftee => {
+        console.log('filter', giftee);
         if(parseInt(giftee.annidate.slice(5,10)) >= parseInt(todaysDate)){
           return true;
         }
       })
       .map(giftee => {
+        console.log('map', giftee);
         return (
           <div key={giftee.id}>
             <div className="row displayRow">
-              <div className="col s3">
+              <div className="col s5">
                 {giftee.first_name} {giftee.last_name}
               </div>
               <div className="col s3">

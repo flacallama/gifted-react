@@ -21,9 +21,9 @@ class Gift extends Component {
     let gift = this.props.gift;
 
     return (
-      <div className="container">
-        <div className="inline" onClick={() => this.expansion()}>
-          <i className="fa fa-pencil-square-o" aria-hidden="true"></i>
+      <div className="container" >
+        <div className="inline buttonMargin" onClick={() => this.expansion()}>
+          <h5><i className="fa fa-pencil-square-o" aria-hidden="true"></i></h5>
         </div>
         <span className="giftIdeaTitle">{gift.idea}</span>
         <span className="giftIdeaNotes">{gift.idea_notes}</span>

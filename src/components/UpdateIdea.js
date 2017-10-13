@@ -10,6 +10,7 @@ class UpdateIdea extends Component {
     return (
       <div className="updateIdea">
         <form
+          className=''
           onSubmit={e => { this.props.updateIdeaAction(this.props.gift.id,
             e.target.idea.value, e.target.notes.value,
             e.target.past.value
@@ -32,10 +33,11 @@ class UpdateIdea extends Component {
             </select>
           </div>
           <div className="form-group">
-            <input type="submit" className="btn btn-primary" />
+            <input type="submit" className="btn btn-primary buttonMargin" />
+            <button className="btn btn-primary buttonMargin" onClick={(e)=>this.props.deleteGiftAction(this.props.gift.id)}>delete</button>
           </div>
         </form>
-        <button onClick={(e)=>this.props.deleteGiftAction(this.props.gift.id)}>delete</button>
+
       </div>
     )
   }

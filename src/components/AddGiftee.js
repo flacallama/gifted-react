@@ -4,7 +4,6 @@ import { bindActionCreators } from 'redux';
 import { addGiftee } from '../actions/getGiftees';
 import AddGifteeForm  from './AddGifteeForm';
 import {Collapse} from 'react-collapse';
-import AnimakitExpander from 'animakit-expander';
 
 class AddGiftee extends Component {
 
@@ -13,6 +12,7 @@ class AddGiftee extends Component {
   }
 
   expansion() {
+    console.log('expansio changed');
     this.setState({expanded: !this.state.expanded})
   }
 
@@ -25,13 +25,13 @@ class AddGiftee extends Component {
 
 
           <div className="updateExpander" onClick={() => this.expansion()}>
-            <h4>Add a new giftee</h4>
+            <h4><i className="fa fa-plus leftMargin" aria-hidden="true"></i></h4>
           </div>
           <div className='gifteeExpanderDetails'>
             <Collapse
               isOpened={this.state.expanded}
             >
-              <AddGifteeForm />
+              <AddGifteeForm expansion={this.expansion}/>
             </Collapse>
           </div>
 

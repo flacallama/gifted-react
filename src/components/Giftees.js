@@ -17,8 +17,9 @@ componentWillMount(){
     })
     return (
       <div>
-        <span><h3>All the people you have to buy for</h3></span> <span>{thegiftees} </span>
-        <AddGiftee />
+        <span className='center'><h3>Gift Recipients</h3></span> 
+        <span>{thegiftees} </span>
+        <AddGiftee className="verticalAlignMiddle"/>
 
       </div>
     )

@@ -9,17 +9,17 @@ class IconGiftee extends Component {
 
     let birthday = null;
     if (giftee.birthday === true){
-      birthday = <i className="fa fa-birthday-cake" aria-hidden="true"></i>
+      birthday = <i className="fa fa-birthday-cake fa-2x" aria-hidden="true"></i>
     }
 
     let xmas = null;
     if (giftee.xmas === true){
-      xmas = <i className="fa fa-tree" aria-hidden="true"></i>
+      xmas = <i className="fa fa-tree fa-2x" aria-hidden="true"></i>
     }
 
     let valentines = null;
     if (giftee.valentines === true){
-      valentines = <i className="fa fa-heart" aria-hidden="true"></i>
+      valentines = <i className="fa fa-heart fa-2x" aria-hidden="true"></i>
     }
 
     let fathersday = null;

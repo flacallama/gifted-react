@@ -15,7 +15,8 @@ class DeleteGiftee extends Component {
           <button
             type="submit"
             className="btn btn-primary"
-            onClick={e => this.props.deleteGifteeAction(giftee.id)}
+            onClick={() => {if(alert('This item will be deleted')) {e => this.props.deleteGifteeAction(giftee.id)};}}
+
           >delete</button>
         </div>
       </div>

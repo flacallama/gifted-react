@@ -26,7 +26,7 @@ componentWillMount(){
         return (
           <div key={giftee.id}>
             <div className="row displayRow">
-              <div className="col s3">
+              <div className="col s5">
                 {giftee.first_name} {giftee.last_name}
               </div>
               <div className="col s3">

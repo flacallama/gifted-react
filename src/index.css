@@ -12,12 +12,24 @@ body {
   margin-right: 3em;
 }
 
+.buttonMargin{
+  margin: 3px;
+}
+
+.verticalAlignMiddle{
+  vertical-align: middle
+}
+
 .topMargin{
   margin-top: 1em;
 }
 
 .noBottomMargin{
   margin-bottom: 0px !important;
+}
+
+.center{
+  text-align: center;
 }
 
 .inline{
@@ -28,14 +40,32 @@ body {
   float: right;
 }
 
-
-/*  Gift ideas page */
-
-.updateExpander{
-  width: 100%;
-  background-color: #f3f3f3;
-  border: 2px solid white;
+.left{
+  float:left;
 }
+
+
+
+
+
+
+input {
+  outline: none;
+  padding: 12px;
+  border-radius: 3px;
+  border: 1px solid black;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* logo */
@@ -45,7 +75,7 @@ top: -15px;
 color: #fff;
 font-size: 3em;
 font-weight: bold;
-font-family: Garamond;
+font-family: Baskerville;
 text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0,0,0,.1);
 }
 
@@ -54,11 +84,36 @@ text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px
 }
 
 
+/*header*/
+
+.headerFixed {
+  position: fixed !important;
+  top: 0px;
+  width: 100%;
+}
+
+.headerBlock{
+  height: 70px;
+}
+
+
+
+/*  Gift ideas page */
+
+.updateExpander{
+  width: 100%;
+  background-color: #f3f3f3;
+  border-bottom: 3px solid white;
+}
+
+
+
+/* new gifts */
 
 
 
 .giftIdeaTitle{
-  background-color: green;
+
   margin: 0px;
   font-size: 1.7em;
   font-variant: small-caps;
@@ -67,7 +122,7 @@ text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px
 }
 
 .giftIdeaNotes{
-  background-color: darkgreen;
+
   margin: 0px 0px 0px 15px;
   font-size: 1.2em;
   font-family: helvetica;
@@ -85,12 +140,14 @@ text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px
 }
 
 .updateIdea{
-  background-color: lightgreen;
+  background-color: #f3f3f3;
+
+  color: black;
 }
 
 .gifteeIcons{
-  height: 17px;
-  width: 17px;
+  height: 27px;
+  width: 27px;
 }
 
 .gifteeExpanderDetails{
@@ -116,4 +173,91 @@ text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px
 
 .displayRow{
   height: .3em;
+}
+
+
+/* about */
+
+.heading{
+  font-variant: small-caps;
+}
+
+.aboutBody{
+  overflow: scroll;
+  margin-bottom:50px;
+}
+
+.skills{
+  margin-left:1em;
+}
+
+.aboutTitle{
+  font-variant: small-caps;
+  font-weight: 600;
+  font-family: helvetica;
+}
+
+.aboutSubTitle{
+  color: darkgrey;
+  font-family: helvetica;
+}
+
+tr{
+  line-height: .5em;
+}
+
+table {
+  table-layout: auto;
+  column-gap: normal;
+  margin-left: 1em;
+  width: auto;
+  margin-bottom: 2em;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* form stuff */
+
+::-webkit-input-placeholder { /* Chrome */
+  color: black;
+  transition: opacity 250ms ease-in-out;
+}
+:focus::-webkit-input-placeholder {
+  opacity: 0.5;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: black;
+  transition: opacity 250ms ease-in-out;
+}
+:focus:-ms-input-placeholder {
+  opacity: 0.5;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: black;
+  opacity: 1;
+  transition: opacity 250ms ease-in-out;
+}
+:focus::-moz-placeholder {
+  opacity: 0.5;
+}
+:-moz-placeholder { /* Firefox 4 - 18 */
+  color: black;
+  opacity: 1;
+  transition: opacity 250ms ease-in-out;
+}
+:focus:-moz-placeholder {
+  opacity: 0.5;
 }

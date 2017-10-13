@@ -10,7 +10,7 @@ export const getGiftees = (giftees) => {
 
 
 export const addGiftee = (first, last, relationship, email, age, birthday, birthdate, birthday_price, xmas, xmas_price, hanukka, hanukka_price, mothersday, mothersday_price, fathersday, fathersday_price, valentines, valentines_price, anniday, annidate, anniday_price, budget) => {
-  console.log('action reached', first);
+  console.log('action reached', birthday_price, anniday_price);
   return {
     type: "ADD_GIFTEE",
     payload: axios.post("http://localhost:8089/giftees",

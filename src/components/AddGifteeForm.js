@@ -65,7 +65,6 @@ class AddGifteeForm extends Component {
   }
 
   valentinesToggle = () => {
-    console.log('valentines day toggle');
     this.setState({
       valentines: !this.state.valentines,
     });
@@ -77,19 +76,32 @@ class AddGifteeForm extends Component {
     });
   }
 
-  // resetState = () => {
-  //   this.setState({
-  //     birthday: false,
-  //     xmas: false,
-  //     hanukka: false,
-  //     mothersday: false,
-  //     fathersday: false,
-  //     valentines: false,
-  //     anniday: false,
-  //     annidate: '',
-  //     birthdate: ''
-  //   })
-  // }
+  resetState = () => {
+    this.setState({
+      first: null,
+      last: null,
+      relationship: null,
+      email: null,
+      age: null,
+      birthday: false,
+      birthdate: '',
+      birthday_price: null,
+      xmas: false,
+      xmas_price: null,
+      hanukka: false,
+      hanukka_price: null,
+      mothersday: false,
+      mothersday_price: null,
+      fathersday: false,
+      fathersday_price: null,
+      valentines: false,
+      valentines_price: null,
+      anniday: false,
+      annidate: '',
+      anniday_price: null,
+      budget: null
+    })
+  }
 
 
 
@@ -177,7 +189,8 @@ class AddGifteeForm extends Component {
             this.state.budget
           )
           e.preventDefault();
-          // this.resetState();
+          this.resetState();
+          // this.props.expansion();
           e.target.reset();
         }}
 
