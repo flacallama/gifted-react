@@ -14,8 +14,7 @@ class About extends Component {
             < hr/>
           <p className='aboutP'>This project represents my work after completing three quarters of the 6 months curriculum at Galvanize. .
             </p>
-
-            <h5 className="hidden">I know tables are lame, but i wanted to practice them a little bit</h5>
+            <p className="hidden">I know tables are lame, but i wanted to practice them a little bit</p>
             <div className="">
               <table>
                 <tr>
@@ -80,7 +79,7 @@ class About extends Component {
               </tr>
               <tr>
                 <td>This repo:</td>
-                <td><a href="  https://github.com/flacallama/g58-react-redux-assessment">assessment-camera</a></td>
+                <td><a href="  https://github.com/flacallama/gifted">gifted - q3 project</a></td>
               </tr>
               <tr>
                 <td>LinkedIn:</td>

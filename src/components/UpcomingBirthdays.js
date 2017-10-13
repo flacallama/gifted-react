@@ -30,9 +30,9 @@ componentWillMount(){
         }
       })
       .sort((a,b) => {
-        if(a[moment().format("birthdate", "MM/DD")] > b[moment().format("birthdate", "MM/DD")]) {
+        if(a["birthdate".valueOf()] > b["birthdate".valueOf()]) {
           return 1;
-          } else if(a[moment().format("birthdate", "MM/DD")] < b[moment().format("birthdate", "MM/DD")]) {
+          } else if(a["birthdate".valueOf()] < b["birthdate".valueOf()]) {
             return -1;
           } else {
             return 0;

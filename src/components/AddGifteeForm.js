@@ -190,7 +190,6 @@ class AddGifteeForm extends Component {
           )
           e.preventDefault();
           this.resetState();
-          // this.props.expansion();
           e.target.reset();
         }}
 

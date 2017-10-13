@@ -51,6 +51,9 @@ componentWillMount(){
         })
       .filter(giftee => {
         console.log('filter', giftee);
+        if(!giftee.annidate){
+          return false
+        }
         if(parseInt(giftee.annidate.slice(5,10)) >= parseInt(todaysDate)){
           return true;
         }
