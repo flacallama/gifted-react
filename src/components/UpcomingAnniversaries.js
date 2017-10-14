@@ -23,10 +23,10 @@ componentWillMount(){
     var m = moment(ts);
     var todaysDate = m.format("MM/DD");
 
-    console.log('first getGiftees', this.props.getGiftees);
+
     let theupcoming = this.props.getGiftees
       .filter(giftee=> {
-        console.log('first filter', giftee.anniday_price);
+
         if(1===1){
           return true
         }
@@ -50,7 +50,7 @@ componentWillMount(){
           }
         })
       .filter(giftee => {
-        console.log('filter', giftee);
+    
         if(!giftee.annidate){
           return false
         }

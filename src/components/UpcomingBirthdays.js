@@ -83,7 +83,14 @@ function sorter(arr){
 
 
 
+console.log("dates", dates);
     let theupcoming = dates
+
+
+
+
+
+
       // .filter(giftee=> {
       //   if(giftee.birthdate){
       //     return true
@@ -125,11 +132,7 @@ function sorter(arr){
 
 
       let totalDdayArr = this.props.getGiftees
-        // .filter(giftee =>{
-        //   if(giftee.birthday === true && parseInt(giftee.birthdate.slice(5,10)) > parseInt(todaysDate)){
-        //     return true
-        //   }
-        // })
+
 
       let total = () => {
         let result = 0;

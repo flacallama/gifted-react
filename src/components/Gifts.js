@@ -22,7 +22,7 @@ class Gifts extends Component {
       })
     return (
       <div className="">
-      
+
         {thegifts}
 
       </div>
