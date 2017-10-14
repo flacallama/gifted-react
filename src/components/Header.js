@@ -10,7 +10,7 @@ class Header extends Component {
         <div className="nav-wrapper red lighten-2 header headerFixed">
           <nav className="header">
               <ul id="nav-mobile" className="left hide-on-med-and-down">
-                <li><NavLink to="/"><h5 className='topMargin'>Home</h5></NavLink></li>
+                <li><NavLink to="/"><h5 className='topMargin'>Giftees</h5></NavLink></li>
                 <li><NavLink to="/upcoming"><h5 className='topMargin'>Upcoming</h5></NavLink></li>
                 <li><NavLink to="/about"><h5 className='topMargin'>About</h5></NavLink></li>
               </ul>

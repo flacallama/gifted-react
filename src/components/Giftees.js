@@ -20,7 +20,7 @@ componentWillMount(){
 
     return (
       <div>
-        <span className='center'><h3>You Have {gifteesLength} Gift Recipients</h3></span> 
+        <span className='center'><h3 className="youHave">You Have {gifteesLength} Gift Recipients</h3></span> 
         <span>{thegiftees} </span>
         <AddGiftee className="verticalAlignMiddle"/>
 

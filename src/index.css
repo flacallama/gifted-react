@@ -60,10 +60,15 @@ input {
 
 
 
+.form-control1{
+  color: black;
+}
 
 
-
-
+.youHave{
+  font-variant: small-caps;
+  font-weight: bold;
+}
 
 
 

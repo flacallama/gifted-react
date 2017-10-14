@@ -210,7 +210,7 @@ class AddGifteeForm extends Component {
                 onChange={this.birthdayToggle}
                 id="birthday"
               />
-              <label          htmlFor="birthday">Birthday</label>
+              <label    className='form-control1'      htmlFor="birthday">Birthday</label>
             </p>
 
             {this.bDayCalendarPop()}
@@ -232,7 +232,7 @@ class AddGifteeForm extends Component {
                 onChange={this.xmasToggle}
                 id="xmas"
               />
-            <label          htmlFor="xmas">Christmas</label>
+            <label   className='form-control1'       htmlFor="xmas">Christmas</label>
             </p>
 
             {this.state.xmas ? <input className="form-control" type="number" name="xmas_price" placeholder="Christmas Budget" onChange={e => this.setState({xmas_price: e.target.value})}/> : ''}
@@ -245,7 +245,7 @@ class AddGifteeForm extends Component {
                 onChange={this.hanukkaToggle}
                 id="hanukka"
               />
-            <label          htmlFor="hanukka">Hanukka</label>
+            <label   className='form-control1'       htmlFor="hanukka">Hanukka</label>
             </p>
 
             {this.state.hanukka ? <input className="form-control" type="number" name="hanukka_price" placeholder="Hanukka Budget" onChange={e => this.setState({hanukka_price: e.target.value})}/> : ''}
@@ -258,7 +258,7 @@ class AddGifteeForm extends Component {
                 onChange={this.mothersdayToggle}
                 id="mothersday"
               />
-            <label          htmlFor="mothersday">Mothers Day</label>
+            <label   className='form-control1'       htmlFor="mothersday">Mothers Day</label>
             </p>
 
             {this.state.mothersday ? <input className="form-control" type="number" name="mothersday_price" placeholder="Mothers Day Budget" onChange={e => this.setState({mothersday_price: e.target.value})}/> : ''}
@@ -274,7 +274,7 @@ class AddGifteeForm extends Component {
                 onChange={this.fathersdayToggle}
                 id="fathersday"
               />
-            <label          htmlFor="fathersday">Fathers Day</label>
+            <label    className='form-control1'      htmlFor="fathersday">Fathers Day</label>
             </p>
 
             {this.state.fathersday ? <input className="form-control" type="number" name="fathersday_price" placeholder="Fathers Day Budget" onChange={e => this.setState({fathersday_price: e.target.value})}/> : ''}
@@ -287,7 +287,7 @@ class AddGifteeForm extends Component {
                 onChange={this.valentinesToggle}
                 id="valentines"
               />
-            <label          htmlFor="valentines">Valentines Day</label>
+            <label  className='form-control1'        htmlFor="valentines">Valentines Day</label>
             </p>
 
             {this.state.valentines ? <input className="form-control" type="number" name="valentines_price" placeholder="Valentines Day Budget" onChange={e => this.setState({valentines_price: e.target.value})}/> : ''}
@@ -300,7 +300,7 @@ class AddGifteeForm extends Component {
                 onChange={this.annidayToggle}
                 id="anniday"
               />
-            <label          htmlFor="anniday">Anniversary</label>
+            <label   className='form-control1'       htmlFor="anniday">Anniversary</label>
             </p>
 
             {this.anniDateCalendarPop()}
