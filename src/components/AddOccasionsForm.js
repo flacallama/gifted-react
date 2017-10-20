@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 import { addOccasions } from '../actions/getOccasions';
 import InfiniteCalendar from 'react-infinite-calendar';
 import 'react-infinite-calendar/styles.css';
+import { Field, reduxForm } from 'redux-form';
 
 
 class AddOccasionsForm extends Component {
