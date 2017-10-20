@@ -3,6 +3,7 @@ import getGiftees from './getGiftees';
 import getGifts from './getGifts';
 import addIdea from './addIdea';
 import getOccasions from './getOccasions';
+import toggleAddOccasions from './toggleAddOccasions'
 import { reducer as formReducer } from 'redux-form';
 
 
@@ -11,6 +12,7 @@ const rootReducer = combineReducers({
   getGiftees,
   getGifts,
   getOccasions,
+  toggleAddOccasions,
   addIdea
 })
 

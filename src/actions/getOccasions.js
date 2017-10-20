@@ -9,13 +9,13 @@ export const getOccasions = (Occasions) => {
 
 
 
-export const addOccasion = (first, last, relationship, email, age, birthday, birthdate, birthday_price, xmas, xmas_price, hanukka, hanukka_price, mothersday, mothersday_price, fathersday, fathersday_price, valentines, valentines_price, anniday, annidate, anniday_price, budget) => {
+export const addOccasions = (giftee_id, birthday, birthdate, birthday_price, xmas, xmas_price, hanukka, hanukka_price, mothersday, mothersday_price, fathersday, fathersday_price, valentines, valentines_price, anniday, annidate, anniday_price) => {
   console.log('action reached', birthday_price, anniday_price);
   return {
     type: "ADD_OCCASION",
     payload: axios.post("http://localhost:8089/occasions",
       {
-        creator_id: 1,
+        giftee_id: giftee_id,
         birthday: birthday,
         birthdate: birthdate,
         birthday_price: birthday_price,
@@ -31,8 +31,7 @@ export const addOccasion = (first, last, relationship, email, age, birthday, bir
         valentines_price: valentines_price,
         anniday: anniday,
         annidate: annidate,
-        anniday_price: anniday_price,
-        budget: budget,
+        anniday_price: anniday_price
       }
     )
   }

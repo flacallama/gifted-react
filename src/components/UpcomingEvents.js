@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import {getOccasions} from '../actions/getOccasions';
 var moment = require('moment');
+var holidays = require('@date/holidays-us')
 moment().format();
 
 class UpcomingEvents extends Component {
@@ -13,7 +14,7 @@ state = {
 
 componentWillMount(){
   this.props.getOccasionsAction();
-  this.setState({ready:true})
+  // this.setState({ready:true})
 }
 
 
@@ -22,7 +23,11 @@ componentWillMount(){
     var ts = moment(ttoday).valueOf();
     var m = moment(ts);
     var todaysDate = m.format("MM/DD");
-    console.log('todaysDate', todaysDate);
+    var thisYearInt = m.format("YYYY");
+    var mothersDate = (moment(moment(holidays.mothersDay(thisYearInt)).valueOf())).format("MM/DD");
+    var fathersDate = (moment(moment(holidays.fathersDay(thisYearInt)).valueOf())).format("MM/DD")
+
+
 
   let eventArr = [];
   let dateArr = this.props.getOccasions
@@ -39,16 +44,23 @@ componentWillMount(){
       if(occasion.valentines){
         eventArr.push([occasion.first_name, occasion.last_name, '02/14',  occasion.valentines_price, "Valentines Day"])
       }
+      if(occasion.mothersday){
+        eventArr.push([occasion.first_name, occasion.last_name, mothersDate,  occasion.mothersday_price, "Mothers Day"])
+      }
+      if(occasion.fathersday){
+        eventArr.push([occasion.first_name, occasion.last_name, fathersDate,  occasion.fathersday_price, "Fathers Day"])
+      }
+      if(occasion.hanukka){
+        eventArr.push([occasion.first_name, occasion.last_name, '12/12',  occasion.hanukka_price, "Hanukka"])
+      }
+
 
     })
     .map(occasion =>{
       return occasion
     })
 
-    console.log('eventArr', eventArr);
 
-
-console.log('dateArr', dateArr);
 
 let today = '10/03'
 let dates = sorter(eventArr)
@@ -58,32 +70,26 @@ function sorter(arr){
   let resultLesser = [];
   for (let i = 0; i< arr.length; i++){
     if(parseInt(arr[i][2].substring(0,2) + arr[i][2].substring(3,5)) >= parseInt(todaysDate.substring(0,2) + todaysDate.substring(3,5))){
-      console.log("that shits parsing and grouping greater");
       resultGreater.push(arr[i])
     }
   }
   for (let j = 0; j < arr.length; j++){
     if(parseInt(arr[j][2].substring(0,2) + arr[j][2].substring(3,5)) < parseInt(todaysDate.substring(0,2) + todaysDate.substring(3,5))){
-      console.log("that shits parsing and grouping lesser");
       resultLesser.push(arr[j])
     }
   }
   resultGreater.sort(function(a,b){
     if(parseInt(a[2].substring(0,2) + a[2].substring(3,5)) < parseInt(b[2].substring(0,2) + b[2].substring(3,5))){
-      console.log("that shits parsing and sorting -1 greater");
       return -1
     } else {
-      console.log("that shits parsing and sorting 1 greater");
       return 1
     }
 
   })
   resultLesser.sort(function(a,b){
     if  (parseInt(a[2].substring(0,2) + a[2].substring(3,5)) < parseInt(b[2].substring(0,2) + b[2].substring(3,5))){
-      console.log("that shits parsing and sorting -1 lesser");
       return -1
     } else {
-      console.log("that shits parsing and sorting -1 lesser");
       return 1
     }
   })

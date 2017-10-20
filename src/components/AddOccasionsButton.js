@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { deleteGiftee } from '../actions/getGiftees';
+import { toggleAddOccasions } from '../actions/toggleAddOccasions';
 
-class DeleteGiftee extends Component {
+class AddOccasionsButton extends Component {
 
 
 
@@ -15,9 +15,9 @@ class DeleteGiftee extends Component {
           <button
             type="submit"
             className="btn btn-primary"
-            onClick={e => this.props.deleteGifteeAction(giftee.id)}
+            onClick={e => this.props.toggleAddOccasionsAction()}
 
-          >Delete</button>
+          >Add Occasions</button>
         </div>
       </div>
     )
@@ -25,14 +25,14 @@ class DeleteGiftee extends Component {
 }
 function mapStateToProps(state, props){
   return {
-    getGifts: state.getGifts
+    toggleAddOccasions: state.toggleAddOccasions
   }
 }
 
 function matchDispatchToProps(dispatch){
   return {
-    deleteGifteeAction: bindActionCreators(deleteGiftee, dispatch),
+    toggleAddOccasionsAction: bindActionCreators(toggleAddOccasions, dispatch),
 
   }
 }
-export default connect(mapStateToProps, matchDispatchToProps)(DeleteGiftee);
+export default connect(mapStateToProps, matchDispatchToProps)(AddOccasionsButton);

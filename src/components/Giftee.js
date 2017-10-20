@@ -5,6 +5,8 @@ import { getGifts } from '../actions/getGifts';
 import {Collapse} from 'react-collapse';
 import IconGiftee from './IconGiftee';
 import DeleteGiftee from './DeleteGiftee';
+import AddOccasionsButton from './AddOccasionsButton';
+import AddOccasionsForm from './AddOccasionsForm';
 import Gifts from './Gifts'
 import NewIdea from './NewIdea';
 
@@ -32,6 +34,7 @@ class Giftee extends Component {
 
   render () {
     let giftee = this.props.giftee;
+    console.log('giftee from giftee', giftee.first_name, giftee );
     return (
       <div>
 
@@ -44,7 +47,7 @@ class Giftee extends Component {
             </div>
 
             <div className="inline leftMargin">
-              {this.state.expanded ? <DeleteGiftee giftee={giftee} className=""/> : ''}
+              {this.state.expanded ? <div><DeleteGiftee giftee={giftee} className=""/>  </div>: ''}
             </div>
           </div>
           <div className='inline right rightMargin topMargin'><IconGiftee giftee={giftee} /></div>
@@ -56,10 +59,14 @@ class Giftee extends Component {
           >
 
             <div className="row">
-              <div className="col s8">
+              <div className="col s6">
+                <AddOccasionsForm giftee={giftee}/>
+              </div>
+
+              <div className="col s4">
                 <Gifts giftee={giftee}/>
               </div>
-              <div className="col s4">
+              <div className="col s2">
                 <div className='inline left'>
                   <Collapse
                     isOpened={this.state.innerExpanded}

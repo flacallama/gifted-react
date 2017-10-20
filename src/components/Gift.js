@@ -15,9 +15,8 @@ class Gift extends Component {
   expansion() {
     this.setState({expanded: !this.state.expanded})
   }
+
   render () {
-
-
     let gift = this.props.gift;
 
     return (
@@ -34,7 +33,6 @@ class Gift extends Component {
             <UpdateIdea giftee={this.props.giftee} gift={gift}/>
           </Collapse>
         </div>
-
       </div>
     )
   }

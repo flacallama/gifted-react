@@ -2,6 +2,21 @@
 # yarn lockfile v1
 
 
+"@date/generator@^0.1.0":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@date/generator/-/generator-0.1.1.tgz#325519b17528e5a9ffc38cbf60a599fcfef1d4e0"
+
+"@date/holidays-us@^0.3.0":
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/@date/holidays-us/-/holidays-us-0.3.0.tgz#0a847102f0e27b8ef373b6c4bcecc2b2989565c8"
+  dependencies:
+    "@date/generator" "^0.1.0"
+    "@date/holidays" "^0.2.0"
+
+"@date/holidays@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@date/holidays/-/holidays-0.2.0.tgz#02a5d3c7eab4bf6484f7a7c410657b7b40c17fa6"
+
 abab@^1.0.3:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/abab/-/abab-1.0.4.tgz#5faad9c2c07f60dd76770f71cf025b62a63cfd4e"

@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { addGiftee } from '../actions/getGiftees';
+import { addOccasions } from '../actions/getOccasions';
 import InfiniteCalendar from 'react-infinite-calendar';
 import 'react-infinite-calendar/styles.css';
 
 
-class AddGifteeForm extends Component {
+class AddOccasionsForm extends Component {
 
   state = {
-
     birthday: false,
     birthdate: '',
     birthday_price: null,
@@ -26,7 +25,6 @@ class AddGifteeForm extends Component {
     anniday: false,
     annidate: '',
     anniday_price: null
-
   }
 
 
@@ -61,6 +59,7 @@ class AddGifteeForm extends Component {
   }
 
   valentinesToggle = () => {
+    console.log('valentines hit');
     this.setState({
       valentines: !this.state.valentines,
     });
@@ -153,10 +152,12 @@ class AddGifteeForm extends Component {
 
   render () {
 
+    console.log('giftee from add occasions form', this.props.giftee.first_name, this.props.giftee);
     return (
       <div className="row">
         <form
-          onSubmit={e => { this.props.addOccasionAction(
+          onSubmit={e => { this.props.addOccasionsAction(
+            this.props.giftee.id,
             this.state.birthday,
             this.state.birthdate,
             this.state.birthday_price,
@@ -286,7 +287,7 @@ class AddGifteeForm extends Component {
 
             {this.state.anniday ? <input className="form-control" type="number" name="anniday_price" placeholder="Anniversary Budget" onChange={e => this.setState({anniday_price: e.target.value})}/> : ''}
 
-      
+
           </div>
           <div className="form-group">
             <input type="submit" className="btn btn-primary" />
@@ -308,8 +309,8 @@ class AddGifteeForm extends Component {
 
 function matchDispatchToProps(dispatch){
   return {
-    addGifteeAction: bindActionCreators(addGiftee, dispatch),
+    addOccasionsAction: bindActionCreators(addOccasions, dispatch),
 
   }
 }
-export default connect(null, matchDispatchToProps)(AddGifteeForm);
+export default connect(null, matchDispatchToProps)(AddOccasionsForm);
