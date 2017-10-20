@@ -9,6 +9,7 @@ import AddOccasionsButton from './AddOccasionsButton';
 import AddOccasionsForm from './AddOccasionsForm';
 import Gifts from './Gifts'
 import NewIdea from './NewIdea';
+import TestForm from './TestForm';
 
 
 
@@ -34,7 +35,7 @@ class Giftee extends Component {
 
   render () {
     let giftee = this.props.giftee;
-    console.log('giftee from giftee', giftee.first_name, giftee );
+    // console.log('giftee from giftee', giftee.first_name, giftee );
     return (
       <div>
 
@@ -46,48 +47,53 @@ class Giftee extends Component {
               <h5 className="leftMargin">{giftee.first_name} {giftee.last_name}</h5>
             </div>
 
-            <div className="inline leftMargin">
+            <div className="inline rightMargin">
               {this.state.expanded ? <div><DeleteGiftee giftee={giftee} className=""/>  </div>: ''}
             </div>
           </div>
-          <div className='inline right rightMargin topMargin'><IconGiftee giftee={giftee} /></div>
+
+          <div className='inline right rightMargin topMargin'>
+            <IconGiftee giftee={giftee} />
+          </div>
 
         </div>
+
+
         <div className='gifteeExpanderDetails'>
-          <Collapse
-            isOpened={this.state.expanded}
-          >
+
+          <Collapse isOpened={this.state.expanded}>
 
             <div className="row">
-              <div className="col s6">
+
+              <div className="col s4">
                 <AddOccasionsForm giftee={giftee}/>
               </div>
 
-              <div className="col s4">
+              <div className="col s3">
+                <TestForm giftee={giftee}/>
+              </div>
+
+              <div className="col s1">
                 <Gifts giftee={giftee}/>
               </div>
-              <div className="col s2">
+
+              <div className="col s3">
                 <div className='inline left'>
-                  <Collapse
-                    isOpened={this.state.innerExpanded}
-                  >
+
+                  <Collapse isOpened={this.state.innerExpanded}>
                     <NewIdea giftee={giftee}/>
                   </Collapse>
+
                 </div>
                 <div className="right rightMargin inline" onClick={() => this.innerExpansion()}>
                   {!this.state.innerExpanded ? <h4><i className="fa fa-plus inline" aria-hidden="true"></i></h4> : <h4><i className="fa fa-minus inline" aria-hidden="true"></i></h4>}
                 </div>
-
-
-
               </div>
 
-
             </div>
-
           </Collapse>
-        </div>
 
+        </div>
 
       </div>
     )
