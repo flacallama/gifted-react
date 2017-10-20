@@ -13,6 +13,7 @@ class Header extends Component {
                 <li><NavLink to="/"><h5 className='topMargin'>Giftees</h5></NavLink></li>
                 <li><NavLink to="/upcoming"><h5 className='topMargin'>Upcoming</h5></NavLink></li>
                 <li><NavLink to="/about"><h5 className='topMargin'>About</h5></NavLink></li>
+                <li><NavLink to="/tobuy"><h5 className='topMargin'>To Buy</h5></NavLink></li>
               </ul>
               <div className="inline right">
 
