@@ -1,38 +1,31 @@
 import React, { Component } from 'react';
+import { Field, reduxForm } from 'redux-form';
+
+
 class TestForm extends Component {
 
-  state = {
-    checkTest: false
-  }
-
-  handleTest = () => {
-    console.log('entered handletest', this.state.checkTest);
-    this.setState({
-      checkTest: !this.state.checkTest,
-    })
+  addNewPost = (val) => {
+    console.log(val)
   }
 
   render () {
+    const { handleSubmit } = this.props;
     return (
-      <div>
-        <p>
-          <input
-            type="checkbox"
-            name="checkTest"
-            checked={this.state.checkTest}
-            onClick={this.handleTest}
-            id="checkTest"
-          />
-        <label className='form-control1' htmlFor="checkTest">testform</label>
-        </p>
-
-
-
-        <div className="form-group">
-          <input type="submit" className="btn btn-primary" />
+      <form onSubmit={ handleSubmit(this.addNewPost) }>
+        <div>
+          <label htmlFor="email">Email</label>
+          <Field name="email" component="input" type="email" />
         </div>
-      </div>
+        <button type="submit">Submit</button>
+      </form>
     )
   }
 }
+
+TestForm = reduxForm({
+  // a unique name for the form
+  form: 'testFormm'
+})(TestForm)
+
+
 export default TestForm;
