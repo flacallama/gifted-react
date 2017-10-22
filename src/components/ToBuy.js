@@ -9,6 +9,7 @@ class ToBuy extends Component {
       <div>
       <Header />
         toBuy
+        <p>id: {this.id}</p>
       </div>
     )
   }

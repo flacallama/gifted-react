@@ -10,6 +10,10 @@ import AddOccasionsForm from './AddOccasionsForm';
 import Gifts from './Gifts'
 import NewIdea from './NewIdea';
 import TestForm from './TestForm';
+import { Route, Redirect, BrowserHistory} from 'react-router'
+import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom'
+// this also works with react-router-native
 
 
 
@@ -20,6 +24,34 @@ class Giftee extends Component {
     expanded: false,
     innerExpanded: false
   }
+
+  // rerouteToBuy = () => {
+  //   console.log('hit redirect funct');
+  //   BrowserHistory.push('/toBuy')
+  // }
+
+
+
+
+// example of route redirect
+  // <Route exact path="/" render={() => (
+  //   loggedIn ? (
+  //     <Redirect to="/dashboard"/>
+  //   ) : (
+  //     <PublicHomePage/>
+  //   )
+  // )}/>
+
+
+
+
+
+
+
+
+
+
+
 
   expansion() {
     this.setState({expanded: !this.state.expanded})
@@ -36,6 +68,18 @@ class Giftee extends Component {
   render () {
     let giftee = this.props.giftee;
     // console.log('giftee from giftee', giftee.first_name, giftee );
+
+
+    const Button = withRouter(({ history}) => {
+        <button
+          type='button'
+          onClick={() => { history.push('/toBuy') }}
+        >
+          Click Me!
+        </button>
+      })
+
+
     return (
       <div>
 
@@ -66,7 +110,11 @@ class Giftee extends Component {
             <div className="row">
 
               <div className="col s4">
-                <AddOccasionsForm giftee={giftee}/>
+
+
+                {this.Button}
+
+
               </div>
 
               <div className="col s3">

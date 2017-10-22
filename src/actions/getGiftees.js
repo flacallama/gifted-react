@@ -1,9 +1,20 @@
 import axios from 'axios';
 
+var config = {
+    headers: {'Access-Control-Allow-Origin': '*'}
+};
+
+// example get with cors
+// axios.get('https://a.4cdn.org/' + board + '/threads.json', config)
+//     .then(function (response) {
+//         console.log(response.data);
+// });
+
+
 export const getGiftees = (giftees) => {
   return {
     type: "GET_GIFTEES",
-    payload: axios.get("http://localhost:8089/giftees")
+    payload: axios.get("http://localhost:8089/giftees", { crossdomain: true })
   }
 }
 
