@@ -11,7 +11,7 @@ class AddOccasionsForm extends Component {
 
   state = {
     birthday: false,
-    birthdate: '',
+    birthdate: null,
     birthday_price: null,
     xmas: false,
     xmas_price: null,
@@ -24,7 +24,7 @@ class AddOccasionsForm extends Component {
     valentines: false,
     valentines_price: null,
     anniday: false,
-    annidate: '',
+    annidate: null,
     anniday_price: null
   }
 
@@ -75,7 +75,7 @@ class AddOccasionsForm extends Component {
   resetState = () => {
     this.setState({
       birthday: false,
-      birthdate: '',
+      birthdate: null,
       birthday_price: null,
       xmas: false,
       xmas_price: null,
@@ -88,7 +88,7 @@ class AddOccasionsForm extends Component {
       valentines: false,
       valentines_price: null,
       anniday: false,
-      annidate: '',
+      annidate: null,
       anniday_price: null
 
     })
@@ -155,9 +155,10 @@ class AddOccasionsForm extends Component {
     // console.log('giftee from add occasions form', this.props.giftee.first_name, this.props.giftee);
     return (
       <div className="row">
+        <h3>Select Gifting Occasions for {this.props.giftee[0].first_name}</h3>
         <form
           onSubmit={e => { this.props.addOccasionsAction(
-            this.props.giftee.id,
+            this.props.giftee[0].id,
             this.state.birthday,
             this.state.birthdate,
             this.state.birthday_price,

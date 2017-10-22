@@ -154,6 +154,7 @@ class AddOccasionsForm extends Component {
     // console.log('giftee from add occasions form', this.props.giftee.first_name, this.props.giftee);
     return (
       <div className="row">
+        
         <form
           onSubmit={e => { this.props.addOccasionsAction(
             this.props.giftee.id,

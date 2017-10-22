@@ -44,10 +44,12 @@ body {
   float:left;
 }
 
-
-
-.reroute{
-  height: 30px;
+.linkButton{
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  margin-top: 50px;
   width: 50px;
   background-color: green;
 }

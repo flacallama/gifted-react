@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { getGifts } from '../actions/getGifts';
 import {Collapse} from 'react-collapse';
+import {setCurId} from '../actions/setCurId';
 import IconGiftee from './IconGiftee';
 import DeleteGiftee from './DeleteGiftee';
 import AddOccasionsButton from './AddOccasionsButton';
@@ -52,7 +53,6 @@ class Giftee extends Component {
 
 
 
-
   expansion() {
     this.setState({expanded: !this.state.expanded})
   }
@@ -65,21 +65,28 @@ class Giftee extends Component {
     this.props.getGiftsAction();
   }
 
+  linkClick(id){
+    // let giftee = this.props.giftee;
+      console.log('giftee in giftee!!!!!!!!!!!!!!!!!', this.props);
+      // this.props.setCurIdAction(this.props.giftee.id)
+    }
+
   render () {
     let giftee = this.props.giftee;
     // console.log('giftee from giftee', giftee.first_name, giftee );
 
 
-    const Button = withRouter(({ history}) => {
-        <button
-          type='button'
-          onClick={() => { history.push('/toBuy') }}
-        >
-          Click Me!
-        </button>
-      })
+    // const Button = withRouter(({ history}) => {
+    //     <button
+    //       type='button'
+    //       onClick={() => { history.push('/toBuy') }}
+    //     >
+    //       Click Me!
+    //     </button>
+    //   })
 
 
+    // console.log('giftee in giftee', giftee.id);
     return (
       <div>
 
@@ -110,11 +117,7 @@ class Giftee extends Component {
             <div className="row">
 
               <div className="col s4">
-
-
-                {this.Button}
-
-
+                <Link onClick={() => this.props.setCurIdAction(giftee.id)} className='linkButton' to="/toBuy">To Buy</Link>
               </div>
 
               <div className="col s3">
@@ -156,6 +159,7 @@ function mapStateToProps(state, props){
 function matchDispatchToProps(dispatch){
   return {
     getGiftsAction: bindActionCreators(getGifts, dispatch),
+    setCurIdAction: bindActionCreators(setCurId, dispatch)
 
   }
 }

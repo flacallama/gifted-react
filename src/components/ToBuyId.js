@@ -4,9 +4,10 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { getGiftees } from '../actions/getGiftees';
 import { setCurId } from '../actions/setCurId';
-import ToBuyId from './ToBuyId';
+import AddOccasionsForm from './AddOccasionsForm';
 
-class ToBuy extends Component {
+
+class ToBuyId extends Component {
 
 
   componentWillMount(){
@@ -19,16 +20,12 @@ class ToBuy extends Component {
 
   render () {
     let {getGiftees, setCurId} = this.props;
-    console.log('this.props', this.props);
-    console.log(getGiftees, 'setCurId', this.props.setCurId);
+
 
     let thegiftee = getGiftees.filter(elem => {
-      console.log('elem', elem);
       if (elem.id == setCurId){
-        console.log('filter true');
         return true;
       } else {
-        console.log('filterfalse');
         return false;
       }
 
@@ -36,17 +33,15 @@ class ToBuy extends Component {
 
 
 
-
-
-
-    console.log('the giftee', thegiftee);
-
     return (
       <div>
       <Header />
-        {thegiftee[0] ? <ToBuyId /> : <h2>notyet</h2>}
 
-        <p>id: {this.props.setCurId}</p>
+        <h2>{thegiftee[0].first_name} {thegiftee[0].last_name}</h2>
+        <p>{thegiftee[0].created_at.slice(0,10)}</p>
+        <p>{thegiftee[0].relationship}</p>
+        <p>{thegiftee[0].email}</p>
+        <AddOccasionsForm giftee={thegiftee}/>
 
       </div>
     )
@@ -68,4 +63,4 @@ function matchDispatchToProps(dispatch){
 
   }
 }
-export default connect(mapStateToProps, matchDispatchToProps)(ToBuy);
+export default connect(mapStateToProps, matchDispatchToProps)(ToBuyId);
