@@ -28,7 +28,6 @@ class ToBuyId extends Component {
       } else {
         return false;
       }
-
     })
 
 

@@ -5,3 +5,10 @@ export const setCurId = (id) => {
     payload: id
   }
 }
+
+export const resetCurId = () => {
+  console.log('hit action reset curid')
+  return {
+    type: "RESET_CUR_ID"
+  }
+}
