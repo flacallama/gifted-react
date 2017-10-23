@@ -5,7 +5,9 @@ import { bindActionCreators } from 'redux';
 import { getGiftees } from '../actions/getGiftees';
 import { setCurId } from '../actions/setCurId';
 import ToBuyId from './ToBuyId';
+import ToBuyNoIdGiftee from './ToBuyNoIdGiftee';
 import ToBuyNoId from './ToBuyNoId';
+
 
 class ToBuy extends Component {
 
@@ -14,8 +16,19 @@ class ToBuy extends Component {
     this.props.getGifteesAction();
   }
 
+  componentDidMount() {
+    setTimeout(function(){
+      // console.log('tobuy mounted');
+      return true;
+    }, 1000)
 
+   }
 
+  test = () => {
+    setTimeout(function(){
+      return true;
+    }, 1000)
+  }
 
 
   render () {
@@ -30,11 +43,26 @@ class ToBuy extends Component {
 
     })
 
+    // let theGiftees = false;
+    // if (getGiftees){
+      // console.log('get giftees', getGiftees);
+      let theGiftees = getGiftees
+        .filter(giftee =>{
+          if(giftee.id < 1000){
+            return true;
+          }
+        })
+
+        .map(giftee => {
+          // console.log('gifteeee', giftee.first_name);
+          <p>giftee.first_name</p>
+          // <ToBuyNoIdGiftee key={giftee.id} giftee={giftee} />
+        })
 
     return (
       <div>
       <Header />
-        {thegiftee[0] ? <ToBuyId /> : getGiftees ? <ToBuyNoId /> : ''}
+        {thegiftee[0] ? <ToBuyId /> : <ToBuyNoId />}
 
       </div>
     )

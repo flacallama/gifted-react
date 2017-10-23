@@ -15,12 +15,13 @@ class ToBuyNoId extends Component {
     let {getGiftees} = this.props;
     console.log('giftees from noid', getGiftees);
     let theGiftees = getGiftees.map(giftee => {
-      // console.log('gifteeee', giftee);
-      <ToBuyNoIdGiftee key={giftee.id} giftee={giftee} />
+      return <ToBuyNoIdGiftee key={giftee.id} giftee={giftee} />
     })
+    console.log("theGiftees", theGiftees)
     return (
       <div>
-        {theGiftees}
+        tobuynoid
+        {theGiftees.length > 0 ? theGiftees : 'not yet'}
 
       </div>
     )
@@ -36,8 +37,8 @@ function mapStateToProps(state, props){
 
 function matchDispatchToProps(dispatch){
   return {
-    getGifteesAction: bindActionCreators(getGiftees, dispatch)
-
+    getGifteesAction: bindActionCreators(getGiftees, dispatch),
+    // setCurIdAction: bindActionCreators(setCurId, dispatch)
   }
 }
 export default connect(mapStateToProps, matchDispatchToProps)(ToBuyNoId);

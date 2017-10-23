@@ -30,7 +30,14 @@ componentWillMount(){
 
 
   let eventArr = [];
+
+
   let dateArr = this.props.getOccasions
+    // if(this.props.setCurId){
+    //   .filter(occasion => {
+    //     return occasion.giftee_id;
+    //   })
+    // }
     .filter(occasion=> {
       if(occasion.birthdate){
         eventArr.push([occasion.first_name, occasion.last_name, (occasion.birthdate.substring(5, 7) + "/" + occasion.birthdate.substring(8,10)),  occasion.birthday_price, "Birthday"])
@@ -194,6 +201,7 @@ function sorter(arr){
 function mapStateToProps(state, props){
   return {
     getOccasions: state.getOccasions,
+    setCurId: state.setCurId,
   }
 }
 
