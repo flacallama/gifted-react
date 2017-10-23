@@ -32,27 +32,41 @@ componentWillMount(){
   let eventArr = [];
 
   let datesArr = this.props.getOccasions;
-
+  let curName = null;
 
   if(this.props.setCurId > 0){
-    console.log('inside datesar loop');
+
     datesArr = this.props.getOccasions
       .filter(occasion => {
-        console.log('occasion', occasion.id);
         if(this.props.setCurId == occasion.giftee_id){
-          console.log('true');
+          console.log('lst name', occasion.first_name)
+          curName = occasion.first_name;
           return occasion;
         } else {
-          console.log('false');
           return false;
         }
       })
       .map(occasion => {
-        console.log('map', occasion);
         return occasion;
       })
   }
-  console.log('datesarr', this.props.setCurId, datesArr);
+  console.log(curName, 'curName')
+
+  let totalDdayArr = datesArr;
+
+  let total = () => {
+    let result = 0;
+      for(var i = 0; i < totalDdayArr.length; i++){
+        result += totalDdayArr[i].birthday_price;
+        result += totalDdayArr[i].xmas_price;
+        result += totalDdayArr[i].valentines_price;
+        result += totalDdayArr[i].hanukka_price;
+        result += totalDdayArr[i].mothersday_price;
+        result += totalDdayArr[i].fathersday_price;
+        result += totalDdayArr[i].anniday_price;
+      }
+    return result
+  }
 
   let dateArr = datesArr
     .filter(occasion=> {
@@ -166,10 +180,10 @@ function sorter(arr){
                 {occasion[0]} {occasion[1]}
               </div>
               <div className="col s3">
-                budget: ${occasion[3]}
+                {occasion[3] ? "$" + occasion[3] : '' }
               </div>
               <div className="col s3">
-                date: {occasion[2]}
+                {occasion[2]}
               </div>
               <div className='col s1'>
                 {iconAssignor(occasion[4])}
@@ -182,24 +196,28 @@ function sorter(arr){
 
 
 
-      let totalDdayArr = this.props.getOccasions
 
-
-      let total = () => {
-        let result = 0;
-        for(var i = 0; i < totalDdayArr.length; i++){
-          result += totalDdayArr[i].birthday_price
-        }
-        return result
-      }
 
 
     return (
-      <div className="">
-        <h4 className="upcomeHeading">Upcoming Events</h4>
+      <div className="center">
+        <h4 className="upcomeHeading center">Upcoming Events {curName ? "for " + curName : ''}</h4>
         <div className="leftMargin">
           <div className="row noBottomMargin" >
-            <div className="col s8 noBottomMargin">
+            <div className="col s12 noBottomMargin">
+              <div className="col s5">
+                <h5>Name</h5>
+              </div>
+              <div className="col s3">
+                <h5>Budget</h5>
+              </div>
+              <div className="col s3">
+                <h5>Date</h5>
+              </div>
+              <div className='col s1'>
+                <h5>Occasions</h5>
+              </div>
+
               {theupcoming}
             </div>
           </div>
