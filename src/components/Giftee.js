@@ -26,32 +26,6 @@ class Giftee extends Component {
     innerExpanded: false
   }
 
-  // rerouteToBuy = () => {
-  //   console.log('hit redirect funct');
-  //   BrowserHistory.push('/toBuy')
-  // }
-
-
-
-
-// example of route redirect
-  // <Route exact path="/" render={() => (
-  //   loggedIn ? (
-  //     <Redirect to="/dashboard"/>
-  //   ) : (
-  //     <PublicHomePage/>
-  //   )
-  // )}/>
-
-
-
-
-
-
-
-
-
-
 
   expansion() {
     this.setState({expanded: !this.state.expanded})
@@ -65,32 +39,17 @@ class Giftee extends Component {
     this.props.getGiftsAction();
   }
 
-  linkClick(id){
-    // let giftee = this.props.giftee;
-      console.log('giftee in giftee!!!!!!!!!!!!!!!!!', this.props);
-      // this.props.setCurIdAction(this.props.giftee.id)
-    }
+  // linkClick(id){
+  //   // let giftee = this.props.giftee;
+  //     console.log('giftee in giftee!!!!!!!!!!!!!!!!!', this.props);
+  //     // this.props.setCurIdAction(this.props.giftee.id)
+  //   }
 
   render () {
     let giftee = this.props.giftee;
-    // console.log('giftee from giftee', giftee.first_name, giftee );
 
-
-    // const Button = withRouter(({ history}) => {
-    //     <button
-    //       type='button'
-    //       onClick={() => { history.push('/toBuy') }}
-    //     >
-    //       Click Me!
-    //     </button>
-    //   })
-
-
-    // console.log('giftee in giftee', giftee.id);
     return (
       <div>
-
-
         <div className="updateExpander" onClick={() => this.expansion()}>
 
           <div className="inline">
@@ -108,7 +67,6 @@ class Giftee extends Component {
           </div>
 
         </div>
-
 
         <div className='gifteeExpanderDetails'>
 

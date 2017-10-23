@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { setCurId } from '../actions/setCurId';
+import { Link } from 'react-router-dom';
 
 class ToBuyNoIdGiftee extends Component {
 
@@ -22,6 +23,7 @@ class ToBuyNoIdGiftee extends Component {
               <p>{giftee.relationship}</p>
             </div>
             <div className="card-action" onClick=''>
+            <Link onClick={() => this.props.setCurIdAction(giftee.id)} className='linkButton' to="/upcoming">Upcoming events for {giftee.first_name}</Link>
               <a href="#">Upcoming events for {giftee.first_name}</a>
             </div>
           </div>
@@ -39,7 +41,7 @@ function matchDispatchToProps(dispatch){
   return {
     // getGifteesAction: bindActionCreators(getGiftees, dispatch),
     setCurIdAction: bindActionCreators(setCurId, dispatch),
-    
+
   }
 }
 export default connect(null, matchDispatchToProps)(ToBuyNoIdGiftee);

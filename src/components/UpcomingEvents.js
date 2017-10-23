@@ -31,13 +31,30 @@ componentWillMount(){
 
   let eventArr = [];
 
+  let datesArr = this.props.getOccasions;
 
-  let dateArr = this.props.getOccasions
-    // if(this.props.setCurId){
-    //   .filter(occasion => {
-    //     return occasion.giftee_id;
-    //   })
-    // }
+
+  if(this.props.setCurId > 0){
+    console.log('inside datesar loop');
+    datesArr = this.props.getOccasions
+      .filter(occasion => {
+        console.log('occasion', occasion.id);
+        if(this.props.setCurId == occasion.giftee_id){
+          console.log('true');
+          return occasion;
+        } else {
+          console.log('false');
+          return false;
+        }
+      })
+      .map(occasion => {
+        console.log('map', occasion);
+        return occasion;
+      })
+  }
+  console.log('datesarr', this.props.setCurId, datesArr);
+
+  let dateArr = datesArr
     .filter(occasion=> {
       if(occasion.birthdate){
         eventArr.push([occasion.first_name, occasion.last_name, (occasion.birthdate.substring(5, 7) + "/" + occasion.birthdate.substring(8,10)),  occasion.birthday_price, "Birthday"])
