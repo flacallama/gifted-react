@@ -34,13 +34,29 @@ class ToBuyId extends Component {
 
     return (
       <div>
-      <Header />
+        <Header />
+        <h2></h2>
 
-        <h2>{thegiftee[0].first_name} {thegiftee[0].last_name}</h2>
-        <p>{thegiftee[0].created_at.slice(0,10)}</p>
-        <p>{thegiftee[0].relationship}</p>
-        <p>{thegiftee[0].email}</p>
-        <AddOccasionsForm giftee={thegiftee}/>
+
+
+          <div className="row">
+            <div className="col s12 m8">
+              <div className="card blue-grey darken-1">
+                <div className="card-content white-text">
+                  <span className="card-title">{thegiftee[0].first_name} {thegiftee[0].last_name}</span>
+                  
+                    <p>{thegiftee[0].created_at.slice(0,10)}</p>
+                    <p>{thegiftee[0].relationship}</p>
+                    <p>{thegiftee[0].email}</p>
+                </div>
+                <div className="card-action white-text">
+                  <AddOccasionsForm giftee={thegiftee}/>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
 
       </div>
     )

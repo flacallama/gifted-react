@@ -10,7 +10,6 @@ import AddOccasionsButton from './AddOccasionsButton';
 import AddOccasionsForm from './AddOccasionsForm';
 import Gifts from './Gifts'
 import NewIdea from './NewIdea';
-import TestForm from './TestForm';
 import { Route, Redirect, BrowserHistory} from 'react-router'
 import { Link } from 'react-router-dom';
 import { withRouter } from 'react-router-dom'
@@ -39,11 +38,6 @@ class Giftee extends Component {
     this.props.getGiftsAction();
   }
 
-  // linkClick(id){
-  //   // let giftee = this.props.giftee;
-  //     console.log('giftee in giftee!!!!!!!!!!!!!!!!!', this.props);
-  //     // this.props.setCurIdAction(this.props.giftee.id)
-  //   }
 
   render () {
     let giftee = this.props.giftee;
@@ -52,13 +46,13 @@ class Giftee extends Component {
       <div>
         <div className="updateExpander" onClick={() => this.expansion()}>
 
-          <div className="inline">
-            <div className="inline">
+          <div className="">
+            <div className="">
               <h5 className="leftMargin">{giftee.first_name} {giftee.last_name}</h5>
             </div>
 
-            <div className="inline rightMargin">
-              {this.state.expanded ? <div><DeleteGiftee giftee={giftee} className=""/>  </div>: ''}
+            <div className="inline right rightMargin">
+              {this.state.expanded ? <div className="right"><DeleteGiftee giftee={giftee} className=""/>  </div>: ''}
             </div>
           </div>
 
@@ -74,19 +68,17 @@ class Giftee extends Component {
 
             <div className="row">
 
-              <div className="col s4">
-                <Link onClick={() => this.props.setCurIdAction(giftee.id)} className='linkButton' to="/toBuy">To Buy</Link>
+              <div className="col s2">
+                <Link onClick={() => this.props.setCurIdAction(giftee.id)} className='waves-effect waves-light btn-large' to="/toBuy">Occasions</Link>
               </div>
 
-              <div className="col s3">
-                <TestForm giftee={giftee}/>
-              </div>
 
-              <div className="col s1">
+
+              <div className="col s5">
                 <Gifts giftee={giftee}/>
               </div>
 
-              <div className="col s3">
+              <div className="col s5">
                 <div className='inline left'>
 
                   <Collapse isOpened={this.state.innerExpanded}>

@@ -174,19 +174,23 @@ function sorter(arr){
       .map((occasion, i) => {
         return (
           <div key={i}>
-            <div className="row displayRow">
+            <div className="row displayRow ">
 
               <div className="col s5">
-                {occasion[0]} {occasion[1]}
+                <p className='left noBottomMargin leftMargin'>{occasion[0]} {occasion[1]}</p>
+
               </div>
               <div className="col s3">
-                {occasion[3] ? "$" + occasion[3] : '' }
+                <p className='left noBottomMargin leftMargin'>{occasion[3] ? "$" + occasion[3] : '' }</p>
+
               </div>
               <div className="col s3">
-                {occasion[2]}
+                <p className='left noBottomMargin leftMargin'>{occasion[2]}</p>
+
               </div>
               <div className='col s1'>
-                {iconAssignor(occasion[4])}
+                <p className='left noBottomMargin leftMargin'>{iconAssignor(occasion[4])}</p>
+
               </div>
             </div>
           </div>
@@ -202,20 +206,20 @@ function sorter(arr){
     return (
       <div className="center">
         <h4 className="upcomeHeading center">Upcoming Events {curName ? "for " + curName : ''}</h4>
-        <div className="leftMargin">
+        <div className="">
           <div className="row noBottomMargin" >
             <div className="col s12 noBottomMargin">
               <div className="col s5">
-                <h5>Name</h5>
+                <h5 className='left'>Name</h5>
               </div>
               <div className="col s3">
-                <h5>Budget</h5>
+                <h5 className='left'>Budget</h5>
               </div>
               <div className="col s3">
-                <h5>Date</h5>
+                <h5 className='left'>Date</h5>
               </div>
               <div className='col s1'>
-                <h5>Occasions</h5>
+                <h5 className='left'>Occasions</h5>
               </div>
 
               {theupcoming}

@@ -17,15 +17,22 @@ class ToBuyNoIdGiftee extends Component {
     return (
       <div className="container" >
         <div className="row " onClick={this.handleClick}>
-          <div className="card grey darken-1">
-            <div className="card-content white-text">
-              <span className="card-title">{giftee.first_name} {giftee.last_name}</span>
-              <p>{giftee.relationship}</p>
+          <div className=" ">
+            <div className="">
+              <div className="noBottomMargin">
+                <div className="col s7 noIdCard z-depth-1">
+                  <div className="container">
+                    <span className="noBottomMargin heading">{giftee.first_name} {giftee.last_name}</span>
+                    <p className="noBottomMargin noTopMargin">{giftee.relationship}</p>
+                  </div>
+                </div>
+              <div className="">
+              </div>
+              </div>
             </div>
-            <div className="card-action" onClick=''>
-            <Link onClick={() => this.props.setCurIdAction(giftee.id)} className='linkButton' to="/upcoming">Upcoming events for {giftee.first_name}</Link>
-              <a href="#">Upcoming events for {giftee.first_name}</a>
-            </div>
+          </div>
+          <div className="verticalAlignMiddle col s5">
+            <Link onClick={() => this.props.setCurIdAction(giftee.id)} className='waves-effect waves-light btn-large right z-zero' to="/upcoming">{giftee.first_name}&#39;s events</Link>
           </div>
         </div>
       </div>

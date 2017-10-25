@@ -20,9 +20,7 @@ class ToBuyNoId extends Component {
     console.log("theGiftees", theGiftees)
     return (
       <div>
-        tobuynoid
         {theGiftees.length > 0 ? theGiftees : 'not yet'}
-
       </div>
     )
   }

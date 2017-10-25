@@ -79,7 +79,11 @@ class About extends Component {
               </tr>
               <tr>
                 <td>This repo:</td>
-                <td><a href="  https://github.com/flacallama/gifted">gifted - q3 project</a></td>
+                <td><a href="  https://github.com/flacallama/gifted-react">gifted - q3 project React front end</a></td>
+              </tr>
+              <tr>
+                <td>This repo:</td>
+                <td><a href="  https://github.com/flacallama/gifted">gifted - q3 project Express server</a></td>
               </tr>
               <tr>
                 <td>LinkedIn:</td>
