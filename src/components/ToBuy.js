@@ -16,19 +16,19 @@ class ToBuy extends Component {
     this.props.getGifteesAction();
   }
 
-  componentDidMount() {
-    setTimeout(function(){
-      // console.log('tobuy mounted');
-      return true;
-    }, 1000)
+  // componentDidMount() {
+  //   setTimeout(function(){
+  //     // console.log('tobuy mounted');
+  //     return true;
+  //   }, 1000)
+  //
+  //  }
 
-   }
-
-  test = () => {
-    setTimeout(function(){
-      return true;
-    }, 1000)
-  }
+  // test = () => {
+  //   setTimeout(function(){
+  //     return true;
+  //   }, 1000)
+  // }
 
 
   render () {
@@ -43,9 +43,6 @@ class ToBuy extends Component {
 
     })
 
-    // let theGiftees = false;
-    // if (getGiftees){
-      // console.log('get giftees', getGiftees);
       let theGiftees = getGiftees
         .filter(giftee =>{
           if(giftee.id < 1000){
@@ -54,9 +51,7 @@ class ToBuy extends Component {
         })
 
         .map(giftee => {
-          // console.log('gifteeee', giftee.first_name);
           <p>giftee.first_name</p>
-          // <ToBuyNoIdGiftee key={giftee.id} giftee={giftee} />
         })
 
     return (

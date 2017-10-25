@@ -1,57 +1,70 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
+// import { bindActionCreators } from 'redux';
+// import { getOccasions } from '../actions/getOccasions';
 
 class IconGiftee extends Component {
 
-  render () {
-    let giftee = this.props.giftee
+  // componentDidMount(){
+  //   this.props.getOccasionsAction();
+  //   // this.setState({ready:true})
+  // }
 
+  render () {
+    let giftee = this.props.giftee;
+    let occasion = this.props.getOccasions;
+    console.log("occasion from icon", occasion);
+
+
+
+
+    let xmas = null;
+    let dreidel = null;
+    let anniday = null;
+    let hanukka = null;
+    let mothersday = null;
+    let fathersday = null;
+    let valentines = null;
     let birthday = null;
-    if (giftee.birthday === true){
+
+    occasion = occasion.length>0 ? occasion[0] : false;
+
+  // setTimeout(function(){
+
+    if (occasion.birthday === true){
       birthday = <i className="fa fa-birthday-cake fa-2x" aria-hidden="true"></i>
     }
 
-    let xmas = null;
-    if (giftee.xmas === true){
+    if (occasion.xmas === true){
       xmas = <i className="fa fa-tree fa-2x" aria-hidden="true"></i>
     }
 
-    let valentines = null;
-    if (giftee.valentines === true){
+    if (occasion.valentines === true){
       valentines = <i className="fa fa-heart fa-2x" aria-hidden="true"></i>
     }
 
-    let fathersday = null;
-    if (giftee.fathersday === true){
+    if (occasion.fathersday === true){
       fathersday = <img alt="father figure" className= "gifteeIcons lowerIcon" src='https://cdn2.iconfinder.com/data/icons/family-19/100/family-09-512.png'/>
     }
 
-    let mothersday = null;
-    if (giftee.mothersday === true){
+    if (occasion.mothersday === true){
       mothersday = <img alt="mother figure" className= "gifteeIcons lowerIcon" src='https://cdn4.iconfinder.com/data/icons/eldorado-navigation/40/mother_daughter_1-512.png'/>
     }
 
-    let hanukka = null;
-    if (giftee.hanukka === true){
+    if (occasion.hanukka === true){
       hanukka = <img alt="menorah" className= "gifteeIcons lowerIcon" src='https://maxcdn.icons8.com/Share/icon/Cultures//menorah1600.png'/>
     }
 
-    let anniday = null;
-    if (giftee.anniday ===true){
+    if (occasion.anniday ===true){
       anniday = <img alt="engagement ring" className= "gifteeIcons lowerIcon" src='https://d30y9cdsu7xlg0.cloudfront.net/png/5164-200.png'/>
     }
 
-    let dreidel = null;
-    if (giftee.barmitzvah === true || giftee.bahmitzvah === true){
+    if (occasion.barmitzvah === true || giftee.bahmitzvah === true){
       dreidel = <img alt="dreidel" className= "gifteeIcons" src='https://maxcdn.icons8.com/Share/icon/ios7/Holidays//dreidel1600.png'/>
     }
+// }, 2000);
 
 
-
-
-
-    // <i className="fa fa-gift" aria-hidden="true"></i>
 
 
 
@@ -70,10 +83,5 @@ class IconGiftee extends Component {
   }
 }
 
-        // <img className= "gifteeIcons" src='https://d30y9cdsu7xlg0.cloudfront.net/png/75158-200.png'/>
-
-// function mapStateToProps(state, props){
-//
-// }
 
 export default connect(null, null)(IconGiftee);

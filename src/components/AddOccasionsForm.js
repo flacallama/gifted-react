@@ -185,7 +185,7 @@ class AddOccasionsForm extends Component {
         }}
 
         >
-          <div className="col s4">
+          <div className="col s6">
             <div className="row">
 
               <div className="col s6">
@@ -204,7 +204,7 @@ class AddOccasionsForm extends Component {
 
               <div className="col s6">
                 {this.state.birthday ? <input
-                    className="form-control"
+                    className=" white-text"
                     type="number"
                     name="birthday_price"
                     placeholder="Birthday Budget"

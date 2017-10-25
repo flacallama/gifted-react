@@ -219,7 +219,7 @@ function sorter(arr){
                 <h5 className='left'>Date</h5>
               </div>
               <div className='col s1'>
-                <h5 className='left'>Occasions</h5>
+                <h5 className='left'>Occasion</h5>
               </div>
 
               {theupcoming}

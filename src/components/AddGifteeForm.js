@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { addGiftee } from '../actions/getGiftees';
-import InfiniteCalendar from 'react-infinite-calendar';
-import 'react-infinite-calendar/styles.css';
+// import InfiniteCalendar from 'react-infinite-calendar';
+// import 'react-infinite-calendar/styles.css';
 
 
 class AddGifteeForm extends Component {
@@ -56,7 +56,7 @@ class AddGifteeForm extends Component {
             <input className="form-control" name="email" placeholder="email" onChange={e => this.setState({email: e.target.value})}/>
             <input className="form-control" type="number" name="age" placeholder="Age" onChange={e => this.setState({age: e.target.value})}/>
           </div>
-          
+
           <div className="form-group">
             <input type="submit" className="btn btn-primary" />
           </div>

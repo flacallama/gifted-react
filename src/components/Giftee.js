@@ -6,13 +6,14 @@ import {Collapse} from 'react-collapse';
 import {setCurId} from '../actions/setCurId';
 import IconGiftee from './IconGiftee';
 import DeleteGiftee from './DeleteGiftee';
-import AddOccasionsButton from './AddOccasionsButton';
-import AddOccasionsForm from './AddOccasionsForm';
+// import AddOccasionsButton from './AddOccasionsButton';
+// import AddOccasionsForm from './AddOccasionsForm';
 import Gifts from './Gifts'
 import NewIdea from './NewIdea';
-import { Route, Redirect, BrowserHistory} from 'react-router'
+// import { Redirect, BrowserHistory} from 'react-router'
 import { Link } from 'react-router-dom';
-import { withRouter } from 'react-router-dom'
+// import { withRouter } from 'react-router-dom';
+import { getOccasions } from '../actions/getOccasions';
 // this also works with react-router-native
 
 
@@ -38,26 +39,60 @@ class Giftee extends Component {
     this.props.getGiftsAction();
   }
 
+  componentDidMount(){
+    this.props.getOccasionsAction();
+    // this.setState({ready:true})
+  }
+
 
   render () {
     let giftee = this.props.giftee;
 
+    console.log('getOccasions', this.props.getOccasions);
+
+    let occasion = this.props.getOccasions
+      .filter(elem =>{
+        // console.log('compare in giftee', giftee.id, elem.giftee_id);
+        if(giftee.id === elem.giftee_id){
+          console.log('true', giftee.first_name, giftee.id, elem.giftee_id);
+          return true;
+        } else {
+          console.log('false', giftee.first_name, giftee.id, elem.giftee_id);
+          return false;
+        }
+
+      })
+      // .map(elem =>{
+      //   return elem;
+      // })
+
+    console.log('occasion props from giftee', giftee.first_name, occasion);
+
+
+
+
+
+
+
+
+
     return (
       <div>
-        <div className="updateExpander" onClick={() => this.expansion()}>
+        <div className="updateExpander giftee z-depth-1 row" onClick={() => this.expansion()}>
 
-          <div className="">
-            <div className="">
-              <h5 className="leftMargin">{giftee.first_name} {giftee.last_name}</h5>
-            </div>
 
-            <div className="inline right rightMargin">
-              {this.state.expanded ? <div className="right"><DeleteGiftee giftee={giftee} className=""/>  </div>: ''}
-            </div>
+          <div className="col s6">
+            <h5 className="leftMargin">{giftee.first_name} {giftee.last_name}</h5>
           </div>
 
-          <div className='inline right rightMargin topMargin'>
-            <IconGiftee giftee={giftee} />
+          <div className="col s3">
+            {this.state.expanded ? <div className="right"><DeleteGiftee giftee={giftee} className=""/>  </div>: ''}
+          </div>
+
+
+          <div className='col s3'>
+            {occasion ? <IconGiftee getOccasions={occasion} giftee={giftee} /> : 'nope'}
+
           </div>
 
         </div>
@@ -102,6 +137,7 @@ class Giftee extends Component {
 }
 function mapStateToProps(state, props){
   return {
+    getOccasions: state.getOccasions,
     getGifts: state.getGifts
   }
 }
@@ -109,7 +145,8 @@ function mapStateToProps(state, props){
 function matchDispatchToProps(dispatch){
   return {
     getGiftsAction: bindActionCreators(getGifts, dispatch),
-    setCurIdAction: bindActionCreators(setCurId, dispatch)
+    setCurIdAction: bindActionCreators(setCurId, dispatch),
+    getOccasionsAction: bindActionCreators(getOccasions, dispatch)
 
   }
 }
