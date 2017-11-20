@@ -1,5 +1,10 @@
 React front-end
 
+video presentation of Gifted: https://youtu.be/ILNvJ3CbZds
+live web app: https://gifted-reactapp.herokuapp.com/ (takes 45 seconds for servers to wake up)
+
+
+
 Quarter 3 Project
 An exercise in React and Redux
 This project represents my work after completing three quarters of the 6 months curriculum at Galvanize. .
